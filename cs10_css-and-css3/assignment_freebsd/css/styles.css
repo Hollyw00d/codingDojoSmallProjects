@@ -540,6 +540,45 @@ img {
 }
 
 
+/****** Content ******/
+#content {
+    display: block;
+    min-height: 300px;
+    width: auto;
+}
+
+#sidebar {
+    background: #eee;
+    display: block;
+    width: 150px;
+    min-height: 100px;
+    border: 1px solid #d4d4d4;
+    margin: 20px;
+    color: #a20000;
+}
+
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar li {
+    margin: 0 0 0 -20px;
+    line-height: 20px;
+    padding-bottom: 8px;
+}
+
+#sidebar li:before {
+    content: "\00BB";
+}
+
+#sidebar a:link, #sidebar a:visited {
+    color: #a20000;
+}
+
+#sidebar a:hover, #sidebar a:active {
+    text-decoration: none;
+}
+
 
 
 
