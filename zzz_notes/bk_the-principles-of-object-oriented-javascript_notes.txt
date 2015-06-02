@@ -1,0 +1,236 @@
+**Questions for CodeMentor.io Peep on "The Principles of Object-Oriented JavaScript" by by Nicholas C. Zakas Book**
+
+
+1. Chpt 1. Primitive and Reference Types:
+- Quote:
+even functions (which languages traditionally make you jump through hoops to get references to) are represented as objects in JavaScript, which makes them first-class functions.
+
+- Question:
+What is a "first-class function"?
+
+- A:
+
+var sum = function(x, y) {
+  return x + y;
+};
+
+function sum(x, y) {
+  return x + y;
+}
+
+function handler(event) {
+  //do some work
+};
+
+$('button').click(handler)
+
+//java
+
+class Handler implements Listner {
+  public void handle(Event event) {
+    //do work here.
+  }
+}
+
+class TotalCalculator {
+  private String algorithm;
+  
+  public TotalCalculator(String algorithm) {
+    this.algorithm = algorithm;
+  }
+  
+  pubic Double calculate(List<Order> orders) {
+    Double total = 0.0;
+    for (Order order : orders) {
+	  total += order.getCost();
+	}
+	return total;
+  }
+}
+
+TotalCalculator calculator = new TotalCalculator(); //object instantiation/construction/creation
+calculator.calculate(orders); //method invocation or method call
+new TotalCalculator().calculate(orders); //object instantiation/construction/creation & method invocation or method call
+
+// Anonymous Class Object Instatiation (JAVA 7 or earlier)
+
+new TotalCalculator() {
+  public Double calculate(List<Order> orders) {
+    if (orders.size() > 0) {
+    	return orders.getCost();
+	}
+  }
+}.calculate(orders);
+
+//
+
+In Java 8, one can have Lambda expressions as first class citizen functions
+Function<List<Order>, Double> calculator = (orders) -> orders.get(0).getCost()
+
+In Java 7 or earlier, one must write a class to invoke a function as a method.
+
+In JavaScript, one can invoke a function directly without writing an object constructor or prototype.
+
+// javascript anonym
+
+new function(orders) {
+  //some logic here
+}(orders);
+
+button.addListener(new Handler());
+
+In JavaScript, there are two types of objects in addition to basic types:
+object hash & functions
+
+var attributes = {
+  name: 'John',
+  dateOfBirth: '10-22-1990'
+}
+
+var handler = function(event) {
+  
+}
+
+2. Chpt 1. Primitive and Reference Types, "What Are Types?" sect:
+- Quote: Reference types are stored as objects, which are really just references to locations in memory
+
+- Question:
+Are variables, like the [num] example below, objects in JS?
+var num = 2; // variables are often referred to as objects
+
+In Java, there are objects and there are basic data types (light-weight data values)
+Basic data types can be int, float, char, boolean
+Objects are more complex and can have instance variables and methods (and take more memory space)
+There are wrapper objects for each basic data type like Integer, Float, Char, Boolean
+
+In JavaScript, everything is treated typically as an object (even numbers have instance method functions on them)
+
+1.toString() => "1"
+
+3. Chpt 1. Primitive and Reference Types, "Primitive Types" sect:
+- Boolean: true of false 
+
+- Number: Any integer or floating-point numeric value
+
+- String: A character or sequence of characters delimited by either single or double quotes (JavaScript has no separate character type)
+
+- Null: A primitive type that has only one value, [null]
+
+- Undefined: A primitive type that has only one value, [undefined] ([undefined] is the value assigned to a variable that is not initialized)
+
+
+4. Chpt 1. Primitive and Reference Types, "Primitive Types" sect:
+- Quote:  Literals represent values that aren’t stored in a variable, such as a hardcoded name or price
+
+one can reference "Hello" without using a variable, directly.
+alert("Hello");
+
+literals can be assigned to variables (stored)
+var greeting = "Hello";
+
+- Question: 
+Does a literal refer to a variable that is assigned to a primitive type? White is the difference between a literal and primitive?
+
+Usually literals refer to a primiative type "value". However, they can also refer to an array or hash map object, which are not primitive 
+[]
+{}
+console.log({greeting: hello})
+
+Often they are called objects though regardless of whether referenced as a literal or within a variable.
+Literal as a term is not used too much on the job, it's often more of something done in code, but not referred to with words.
+Primitie is important as a word on the other hand because it distinguishes basic object types like integer and
+string from more complex ones coded by the programmer.
+
+5. Chpt 1. Primitive and Reference Types, "Identifying Primitive Types" sect:
+- Quote: console.log(typeof null);        // "object"
+
+- Question: Where does console.log(typeof null); ouput "object" and NOT "null"?
+
+There are alternate ways to check for null without using typeof, such as boolean comparison
+//the following checks if name is not null (name is present)
+//this also checks that name is not undefined also
+if (name) {
+  //do something only if name is there 
+}
+if (!name) {
+  //if name is not assigned or is null (or is boolean false), perhaps pop an error to user
+}
+if (user) {
+  // do work
+else {
+  // ask for login
+}
+
+
+If you ever need to distinguish undefined from null,  google it (I believe you use typof on var and compare to 'undefined' like typeof name === 'undefined') (please google I'm not sure about that one)
+
+
+6. Chpt 1. Primitive and Reference Types, "Primitive Methods" sect:
+- Notes: Even though they're primitive types, string numbers, and Booleans have native methods. [null] and [undefined] don't have native methods.
+
+- Question: Is "native methods" the correct term?
+I can understand that term, but sometimes we call them 'build in' methods or "javascript built in methods"
+Otherwise, other methods are just called "methods" vanilla. Sometimes you may refer to them as custom if you add a method to a built in Javascript type (primitive type) like array to give it more iteration functions.
+
+
+7. Chpt 1. Primitive and Reference Types, "Reference Types"
+- Quote: Functions are reference values in JavaScript so there's little difference between a property that contains an array and one that contains a function except that a function can be executed
+
+- Questions: 
+Is something like alert(); called a native function? 
+
+Is something like function myAlert(){}; called a custom function? 
+
+
+8. Chpt 1. Primitive and Reference Types, "Creating Objects" sect:
+- Quote: It sometimes helps to think of JavaScript objects as nothing more than hash tables
+
+- Question(s): What is a hash table? I know this is a term commonly used in programming.
+
+
+9. Chpt 1., "Creating Objects":
+- Quote: 
+By convention constructors in JavaScript begin with a capital letter to distinguish them from nonconstructor functions. For example, this code instantiates a generic object and stores a reference to it in [object]:
+
+var object = new Object();
+
+- Question(s):
+What is a constructor? In JS can I reference to a constructor as a class?
+
+Does code like below EVER get used? I'm wondering if I should try to remember it.
+var object = new Object();
+
+
+10. Chpt 1., "Creating Objects":
+- Quote: When you assign an object to a variable, you're actually assigning a pointer. That means if you assign one variable to another, each variable gets a copy of the pointer, and both still reference the same object in memory. For example:
+
+var object1 = new Object();
+var object2 = object1;
+
+- Question(s):
+Does this mean that the code above will run faster than the code below?
+var num1 = 1;
+var num2 = 2;
+
+
+11. Chpt. 1., "Dereferencing Objects":
+- Quote: JavaScript is a garbage-collected language, so you don’t really need to worry about memory allocations when you use reference types
+
+- Question(s): What is a "garbage-collected language"?
+
+
+12. Chpt. 1, "Dereferencing Objects":
+- Quote: It's best to dereference objects that you no longer need so that the garbage collector can free up memory. The best way to do this is to set the object variable to null.
+
+var object1 = new Object();
+
+// do something
+
+object1 = null; // dereference
+
+- Question(s):
+Why does the code above free up memory?
+
+Have you ever seen [null] be used to dereference objects?
+
+If it is a good idea to use [null] to derefence objects is there a way to automatically do this, like by using GruntJS? Or should I do it by hand?
