@@ -432,6 +432,23 @@ th {
     min-height: 300px;
 }
 
+h2 {
+    background: #fc0;
+    color: #000;
+    margin: 0;
+    padding: 6px;
+    font-size: 12px;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 10px 0 0;
+}
+
+p {
+    font-size: 12px;
+    line-height: 18px;
+}
 
 /****** Header ******/
 #header {
@@ -487,6 +504,32 @@ th {
 
 #nav li a:hover, #nav li a:active {
     text-decoration: underline;
+}
+
+
+/****** Content ******/
+#content {
+    width: auto;
+    min-height: 300px;
+}
+
+#featured {
+    width: auto;
+    height: 275px;
+    padding: 30px 0 0;
+}
+
+#featured img {
+    padding: 0 14px 0 34px;
+    vertical-align: top;
+}
+
+#featured-text {
+    display: inline-block;
+    width: 485px;
+    height: 240px;
+    vertical-align: top;
+    color: #fff;
 }
 
 
