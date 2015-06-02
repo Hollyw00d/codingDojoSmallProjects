@@ -435,6 +435,20 @@ img {
     border: none;
 }
 
+a:link, a:visited, a:hover, a:active {
+    color: #a20000;
+}
+
+h1 {
+    color: #a20000;
+    font-size: 26px;
+}
+
+h2 {
+   color: #a20000;
+    font-size: 20px;
+}
+
 /****** Container ******/
 #container {
     width: 970px;
@@ -555,6 +569,7 @@ img {
     border: 1px solid #d4d4d4;
     margin: 20px;
     color: #a20000;
+    float: left;
 }
 
 #sidebar ul {
@@ -571,20 +586,17 @@ img {
     content: "\00BB";
 }
 
-#sidebar a:link, #sidebar a:visited {
-    color: #a20000;
-}
-
 #sidebar a:hover, #sidebar a:active {
     text-decoration: none;
 }
 
+#articles {
+    width: 605px;
+    min-height: 350px;
+    float: left;
+    padding: 0 0 0 40px;
+}
 
-
-
-
-
-
-
-
-
+#articles p, #articles li {
+    line-height: 26px;
+}
