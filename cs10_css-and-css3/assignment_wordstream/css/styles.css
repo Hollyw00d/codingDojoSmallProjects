@@ -444,6 +444,11 @@ th {
     text-align: center;
 }
 
+.inline {
+    display: inline-block;
+    vertical-align: top;
+}
+
 body {
     font-family: Helvetica, Arial, sans-serif;
 }
@@ -641,11 +646,14 @@ a:hover, a:active {
     display: inline-block;
     min-height: 250px;
     vertical-align: top;
+    padding: 0 0 0 35px;
 }
     #bread-crumbs-with-phone {
         display: block;
         width: 100%;
         height: 75px;
+        border: 1px solid #8b8b8b;
+        border-width: 0 0 2px 0;
     }
 
     #bread-crumbs {
@@ -653,6 +661,7 @@ a:hover, a:active {
         width: 100px;
         height: 23px;
         line-height: 23px;
+        vertical-align: top;
     }
 
     #bread-crumbs a {
@@ -671,6 +680,25 @@ a:hover, a:active {
         padding: 0 10px 0 0;
     }
 
+    #phone {
+        width: 205px;
+        height: 65px;
+        display: inline-block;
+        color: #8b8b8b;
+        font-size: 12px;
+        padding: 0 0 0 350px;
+    }
+
+    #phone img {
+        vertical-align: top;
+        text-align: left;
+        padding: 0 10px 0 0;
+    }
+
+    #big-phone {
+        color: #57c7ed;
+        font-size: 26px;
+    }
 
 
 
