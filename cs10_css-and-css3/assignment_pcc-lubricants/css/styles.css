@@ -554,9 +554,29 @@ p {
     display: inline-block;
     background: #fefbeb;
     margin: 0 16px 0 0;
+    vertical-align: top;
 }
 
 .category p {
-    padding: 0 0 0 6px;
+    padding: 0 7px;
+    line-height: 11px;
+    font-size: 10px;
 }
+
+.category p.read-more a {
+    text-transform: uppercase;
+    color: #000;
+    background: #fc0;
+    padding: 3px;
+    border-radius: 10px;
+    border: 2px solid #000;
+}
+
+.category p.read-more a:link, .category p.read-more a:visited,
+.category p.read-more a:hover, .category p.read-more a:active {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+
 
