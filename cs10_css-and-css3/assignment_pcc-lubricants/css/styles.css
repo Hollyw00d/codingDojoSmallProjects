@@ -527,9 +527,36 @@ p {
 #featured-text {
     display: inline-block;
     width: 485px;
-    height: 240px;
+    height: 256px;
     vertical-align: top;
     color: #fff;
+    background: #6b6b6a;
 }
 
+#featured-text h3 {
+    padding: 0 7px;
+}
+
+#featured-text p {
+    padding: 0 7px;
+    line-height: 16px;
+}
+
+#categories-container {
+    width: auto;
+    height: 245px;
+    padding: 0 0 20px 34px;
+}
+
+.category {
+    width: 205px;
+    height: 235px;
+    display: inline-block;
+    background: #fefbeb;
+    margin: 0 16px 0 0;
+}
+
+.category p {
+    padding: 0 0 0 6px;
+}
 
