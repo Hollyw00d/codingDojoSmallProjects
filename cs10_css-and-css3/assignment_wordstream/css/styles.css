@@ -425,11 +425,19 @@ th {
 
 
 
-/****** Wrapper & HTML Tags ******/
+/****** Wrapper, HTML Tags & General Classes/IDs ******/
 #wrapper {
     width: 940px;
     min-height: 450px;
     margin: 0 auto;
+}
+
+.light-gray {
+    color: #848486;
+}
+
+.blue {
+    color: #0070b6;
 }
 
 body {
@@ -438,6 +446,10 @@ body {
 
 h2 {
     color: #0070b6;
+}
+
+h3 {
+    color: #d05e1e;
 }
 
 a:link, a:visited {
@@ -452,15 +464,54 @@ a:hover, a:active {
 
 /****** Header ******/
 #header {
-    height: 50px;
-    background: #0070b6;
-    color: #fff;
-    width: auto;
-    font-size: 26px;
-    padding: 0 0 0 20px;
-    line-height: 50px;
+    height: 160px;
 }
 
-/****** Header ******/
+    #header a#logo {
+        font-size: 30px;
+        display: inline-block;
+        padding: 20px 0 0;
+    }
+
+    #header a#logo:link, #header a#logo:visited, #header a#logo:hover, #header a#logo:active {
+        text-decoration: none;
+    }
+
+    #header img {
+        vertical-align: middle;
+        padding: 0 10px 0 20px;
+    }
+
+    #header h1 {
+        height: 50px;
+        background: #0070b6;
+        color: #fff;
+        width: auto;
+        padding: 0 0 0 20px;
+        line-height: 50px;
+        font-size: 26px;
+        margin: 0;
+        font-weight: normal;
+    }
+
+#utility-nav {
+    width: 440px;
+    display: inline-block;
+}
+
+    #utility-nav ul {
+        list-style: none;
+    }
+
+    #utility-nav li {
+        display: inline-block;
+    }
+
+
+
+
+
+
+/****** Sidebar ******/
 
 
