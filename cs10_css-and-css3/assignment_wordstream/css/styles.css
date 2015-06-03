@@ -569,6 +569,7 @@ a:hover, a:active {
     width: 205px;
     min-height: 250px;
     font-size: 12px;
+    display: inline-block;
 }
     #sidebar h2 {
         font-weight: normal;
@@ -633,6 +634,42 @@ a:hover, a:active {
         text-decoration: none;
     }
 
+
+/****** Content ******/
+#content {
+    width: 660px;
+    display: inline-block;
+    min-height: 250px;
+    vertical-align: top;
+}
+    #bread-crumbs-with-phone {
+        display: block;
+        width: 100%;
+        height: 75px;
+    }
+
+    #bread-crumbs {
+        display: inline-block;
+        width: 100px;
+        height: 23px;
+        line-height: 23px;
+    }
+
+    #bread-crumbs a {
+        color: #0070b6;
+    }
+    #bread-crumbs a:link, #bread-crumbs a:visited {
+        text-decoration: none;
+    }
+
+    #bread-crumbs a:hover, #bread-crumbs a:active {
+        text-decoration: underline;
+    }
+
+    #bread-crumbs img {
+        vertical-align: top;
+        padding: 0 10px 0 0;
+    }
 
 
 
