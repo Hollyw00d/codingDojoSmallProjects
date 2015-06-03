@@ -495,16 +495,68 @@ a:hover, a:active {
     }
 
 #utility-nav {
-    width: 440px;
+    width: 460px;
     display: inline-block;
+    vertical-align: top;
+    padding: 0 0 0 205px;
 }
+
+    #utility-nav a:link, #utility-nav a:visited {
+        text-decoration: none;
+    }
+
+    #utility-nav a:hover, #utility-nav a:active {
+        text-decoration: underline;
+    }
 
     #utility-nav ul {
         list-style: none;
+        display: inline-block;
     }
 
     #utility-nav li {
         display: inline-block;
+    }
+
+    #mini-menu {
+        background: #f9f9f9;
+        border: 1px solid #aaa;
+        border-width: 0 1px 1px 1px;
+        border-radius: 10px;
+        padding: 6px;
+        text-align: center;
+        width: 335px;
+        margin: -33px 0 0;
+    }
+
+    #mini-menu li {
+        padding: 0 7px;
+        border: 1px solid #aaa;
+        border-width: 0 0 0 1px;
+    }
+
+    #mini-menu li:first-child {
+        border-width: 0;
+    }
+
+    #mini-menu a {
+        color: #aaa;
+        font-size: 11px;
+    }
+
+    #login {
+        margin: 0;
+        padding: 0 0 0 15px;
+    }
+
+    #login a {
+        background: #0070b6;
+        padding: 5px 10px;
+        border-radius: 8px;
+    }
+
+    #login a:link, #login a:visited, #login a:hover, #login a:active {
+        color: #fff;
     }
 
 
