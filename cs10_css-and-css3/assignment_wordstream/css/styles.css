@@ -729,10 +729,13 @@ ul, p {
 
     #get-started-btn {
         background: #89bc00;
-        padding: 5px;
-        width: 100px;
+        padding: 7px;
+        width: 150px;
         text-align: center;
         color: #fff;
+        font-size: 12px;
+        display: block;
+        border-radius: 10px;
     }
 
     #get-started-btn:link, #get-started-btn:visited {
