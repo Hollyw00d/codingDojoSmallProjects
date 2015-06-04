@@ -711,3 +711,17 @@ ul, p {
         min-height: 250px;
     }
 
+    #article-callout {
+        border: 5px solid #79bede;
+        padding: 5px;
+    }
+
+    #article-callout img {
+        display: inline-block;
+        padding: 0 0 50px;
+    }
+
+    #article-callout-inner {
+        display: inline-block;
+        width: 530px;
+    }
