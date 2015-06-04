@@ -724,4 +724,23 @@ ul, p {
     #article-callout-inner {
         display: inline-block;
         width: 530px;
+        padding: 0 0 10px;
     }
+
+    #get-started-btn {
+        background: #89bc00;
+        padding: 5px;
+        width: 100px;
+        text-align: center;
+        color: #fff;
+    }
+
+    #get-started-btn:link, #get-started-btn:visited {
+        text-decoration: none;
+    }
+
+    #get-started-btn:hover, #get-started-btn:active {
+        text-decoration: underline;
+    }
+
+
