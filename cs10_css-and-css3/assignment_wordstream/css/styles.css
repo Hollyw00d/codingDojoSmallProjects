@@ -700,5 +700,8 @@ a:hover, a:active {
         font-size: 26px;
     }
 
-
+    #article {
+        width: 100%;
+        min-height: 250px;
+    }
 
