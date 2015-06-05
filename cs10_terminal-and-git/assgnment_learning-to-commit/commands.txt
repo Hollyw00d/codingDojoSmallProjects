@@ -1,0 +1,17 @@
+cd ~/Desktop
+mkdir test
+cd ~/Desktop/test
+git init
+touch index.html
+touch styles.css
+vim index.html
+commit -m "updated html"
+git add -A
+git commit -m "updated html"
+vim styles.css
+git add -A
+git commit -m "updated css"
+git log
+git revert -n HEAD
+git log
+git revert -n cf2ba987feda7a24dd5d6c9fff24744a03c5cfed
