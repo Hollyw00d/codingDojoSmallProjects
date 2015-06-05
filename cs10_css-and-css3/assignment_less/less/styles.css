@@ -512,7 +512,7 @@ p {
 #sidebar p {
   line-height: 16px;
 }
-#schedule-demo {
+#sidebar #schedule-demo {
   background: #0070b6;
   color: #fff;
   text-align: center;
@@ -523,13 +523,13 @@ p {
   border-radius: 10px;
   margin: 0 0 7px;
 }
-#schedule-demo:link,
-#schedule-demo:visited,
-#schedule-demo:hover,
-#schedule-demo:active {
+#sidebar #schedule-demo:link,
+#sidebar #schedule-demo:visited,
+#sidebar #schedule-demo:hover,
+#sidebar #schedule-demo:active {
   text-decoration: none;
 }
-#free-trial {
+#sidebar #free-trial {
   background: #d05e1e;
   color: #fff;
   text-align: center;
@@ -539,28 +539,28 @@ p {
   padding: 5px 0;
   border-radius: 10px;
 }
-#free-trial:link,
-#free-trial:visited,
-#free-trial:hover,
-#free-trial:active {
+#sidebar #free-trial:link,
+#sidebar #free-trial:visited,
+#sidebar #free-trial:hover,
+#sidebar #free-trial:active {
   text-decoration: none;
 }
-#home-callout {
+#sidebar #home-callout {
   background: url("../images/left_content_ad.png") no-repeat left bottom;
   height: 241px;
   padding: 10px 20px 0;
 }
-#quote-button {
+#sidebar #quote-button {
   color: #fff;
   text-align: center;
   background: #0070b6;
   padding: 6px;
   border-radius: 5px;
 }
-#quote-button:link,
-#quote-button:visited,
-#quote-button:hover,
-#quote-button:active {
+#sidebar #quote-button:link,
+#sidebar #quote-button:visited,
+#sidebar #quote-button:hover,
+#sidebar #quote-button:active {
   text-decoration: none;
 }
 /****** Content ******/
