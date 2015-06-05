@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>WordStream Assignment</title>
+    <title>Convert to LESS WordStream Assignment</title>
     <link rel="stylesheet" type="text/css" href="less/styles.css" />
 </head>
 <body>
