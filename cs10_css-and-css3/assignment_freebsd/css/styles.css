@@ -497,7 +497,7 @@ h2 {
 
 #text-size a:hover, #text-size a:active {
     color: #F8D147;
-    text-decoration: none;
+    .no-underline;
 }
 
 #search-box {
@@ -545,7 +545,7 @@ h2 {
 
 #nav li a:link, #nav li a:visited {
     color: #666;
-    text-decoration: none;
+    .no-underline;
 }
 
 #nav li a:hover, #nav li a:active {
@@ -587,7 +587,7 @@ h2 {
 }
 
 #sidebar a:hover, #sidebar a:active {
-    text-decoration: none;
+    .no-underline;
 }
 
 #articles {
