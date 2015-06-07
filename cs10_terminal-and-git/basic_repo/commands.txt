@@ -1,0 +1,14 @@
+git clone https://github.com/Hollyw00d/basic_repo.git
+cd basic_repo
+git branch
+git checkout -b create-test-edits
+touch index.html
+vim index.html
+mkdir css
+cd css
+touch styles.css
+vim styles.css
+cd ..
+git add -A
+git commit -m "basic html and css test edits completed"
+git push -u origin create-test-edits
