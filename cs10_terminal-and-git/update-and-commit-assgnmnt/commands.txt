@@ -1,0 +1,11 @@
+git clone https://github.com/Hollyw00d/git_demo.git
+cd git_demo
+git checkout -b test-edits
+vim demo_index.html
+git add -A
+git commit -m "test edits completed"
+git push -u origin test-edits
+ssh-add
+git checkout master
+git pull
+git branch -D test-edits
