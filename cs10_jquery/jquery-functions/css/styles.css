@@ -1,0 +1,29 @@
+body {
+    background: #000;
+}
+
+#wrapper {
+    width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 200px;
+}
+
+.left {
+    float: left;
+    clear: right;
+}
+
+.right {
+    float: right;
+    clear: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.hide {
+    display: none;
+}
