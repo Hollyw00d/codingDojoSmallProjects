@@ -424,3 +424,15 @@ th {
 }
 
 
+/****** Custom Tags ******/
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #000;
+}
+
+#wrapper {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+}
