@@ -5,6 +5,8 @@ $(function() {
        $(this).css("visibility", "hidden");
     });
 
-
+    $("button").on("click", function() {
+        $("img").removeAttr("style");
+    });
 
 });
