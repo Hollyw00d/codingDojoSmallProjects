@@ -430,9 +430,20 @@ body {
     background: #000;
 }
 
+p {
+    margin: 0;
+    padding: 0;
+    width: 182px;
+    overflow: hidden;
+}
+
 #wrapper {
     width: 500px;
     margin: 20px auto;
     padding: 20px;
     background: #fff;
+}
+
+.hide {
+    display: none;
 }
