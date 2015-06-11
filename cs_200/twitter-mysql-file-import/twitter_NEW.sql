@@ -1,1 +1,1 @@
-SELECT * FROM tweets;
+SET SQL_SAFE_UPDATES = 0;
