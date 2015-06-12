@@ -466,7 +466,8 @@ p {
 #wrapper {
     position: relative;
     width: 960px;
-    min-height: 953px;
+    /*min-height: 953px;*/
+    min-height: 1000px;
     overflow: auto;
     margin: 0 auto;
 }
@@ -606,3 +607,80 @@ p {
     #right-main img {
         padding: 18px 0 0 39px;
     }
+
+
+/****** Callouts ******/
+#callouts {
+    width: 100%;
+    min-height: 380px;
+    border: 1px solid #d2d2d2;
+    border-width: 1px 0 0 0;
+    margin: 3px 0 0;
+}
+
+    #left-callouts {
+        width: 640px;
+        display: inline-block;
+        min-height: 370px;
+    }
+
+    .callout {
+        width: 197px;
+        height: 150px;
+        overflow: hidden;
+        display: inline-block;
+        padding: 24px 0 0 0;
+    }
+
+        .callout p {
+            margin: 0 0 0 3px;
+            padding: 10px 0 0 0;
+        }
+
+        .callout h2 {
+            font-size: 24px;
+        }
+
+            .callout img {
+                vertical-align: middle;
+            }
+
+    #callout1 {
+        margin: 0 0 0 -3px;
+        width: 200px;
+    }
+
+    #callout2 {
+        margin: 0 0 0 7px;
+        width: 200px;
+    }
+
+    #callout3 {
+        margin: 0 0 0 6px;
+    }
+
+    .callout-divider {
+             width: 1px;
+             height: 120px;
+             background: #d2d2d2;
+             display: inline-block;
+            margin: 0 0 30px;
+         }
+
+    #callout-description {
+        font-size: 22px;
+    }
+
+    #callout-para {
+        width: 580px;
+        margin: 7px 0 0;
+    }
+
+
+
+
+
+
+
+
+
