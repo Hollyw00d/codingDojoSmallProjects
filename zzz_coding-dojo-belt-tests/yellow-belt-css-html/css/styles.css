@@ -463,6 +463,16 @@ p {
     line-height: 20px;
 }
 
+a:link, a:visited {
+    color: #606060;
+    text-decoration: underline;
+}
+
+a:hover, a:active {
+    color: #606060;
+    text-decoration: none;
+}
+
 #wrapper {
     position: relative;
     width: 960px;
@@ -624,57 +634,100 @@ p {
         min-height: 370px;
     }
 
-    .callout {
-        width: 197px;
-        height: 150px;
-        overflow: hidden;
-        display: inline-block;
-        padding: 24px 0 0 0;
-    }
-
-        .callout p {
-            margin: 0 0 0 3px;
-            padding: 10px 0 0 0;
+        .callout {
+            width: 197px;
+            height: 150px;
+            overflow: hidden;
+            display: inline-block;
+            padding: 24px 0 0 0;
         }
 
-        .callout h2 {
-            font-size: 24px;
-        }
-
-            .callout img {
-                vertical-align: middle;
+            .callout p {
+                margin: 0 0 0 3px;
+                padding: 10px 0 0 0;
             }
 
-    #callout1 {
-        margin: 0 0 0 -3px;
-        width: 200px;
+            .callout h2 {
+                font-size: 24px;
+            }
+
+                .callout img {
+                    vertical-align: middle;
+                }
+
+        #callout1 {
+            margin: 0 0 0 -3px;
+            width: 200px;
+        }
+
+        #callout2 {
+            margin: 0 0 0 7px;
+            width: 200px;
+        }
+
+        #callout3 {
+            margin: 0 0 0 6px;
+        }
+
+        .callout-divider {
+                 width: 1px;
+                 height: 120px;
+                 background: #d2d2d2;
+                 display: inline-block;
+                margin: 0 0 30px;
+             }
+
+        #callout-description {
+            font-size: 22px;
+        }
+
+        #callout-para {
+            width: 580px;
+            margin: 7px 0 0;
+        }
+
+    #right-callouts {
+        display: inline-block;
+        vertical-align: top;
+        width: 310px;
+        height: 366px;
+        border-radius: 4px;
+        background: #fff;
+        margin: 15px 0 0 5px;
     }
 
-    #callout2 {
-        margin: 0 0 0 7px;
-        width: 200px;
-    }
+        #right-callouts-text {
+            display: inline-block;
+            vertical-align: top;
+            width: 179px;
+        }
 
-    #callout3 {
-        margin: 0 0 0 6px;
-    }
+            #right-callouts-text h2 {
+                padding: 12px 0 0 16px;
+                font-size: 24px;
+            }
 
-    .callout-divider {
-             width: 1px;
-             height: 120px;
-             background: #d2d2d2;
-             display: inline-block;
-            margin: 0 0 30px;
-         }
+            #right-callouts-text p {
+                margin: 0;
+                padding: 0 0 0 16px;
+                line-height: 22px;
+            }
 
-    #callout-description {
-        font-size: 22px;
-    }
+        #right-callout-img {
+            display: inline-block;
+            vertical-align: top;
+            width: 126px;
+        }
 
-    #callout-para {
-        width: 580px;
-        margin: 7px 0 0;
-    }
+            #right-callout-img img {
+                vertical-align: top;
+                padding: 13px 0 0 0;
+            }
+
+
+
+
+
 
 
 
