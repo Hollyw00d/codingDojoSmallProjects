@@ -595,6 +595,9 @@ a:hover, a:active {
             text-align: center;
             width: 110px;
             font-size: 16px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            -webkit-border-radius: 4px;
             border-radius: 4px;
         }
 
@@ -691,8 +694,10 @@ a:hover, a:active {
         vertical-align: top;
         width: 310px;
         height: 366px;
-        border-radius: 4px;
-        background: #fff;
+        -moz-border-radius: 4px;
+        -o-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;        background: #fff;
         margin: 15px 0 0 5px;
     }
 
@@ -724,9 +729,110 @@ a:hover, a:active {
                 padding: 13px 0 0 0;
             }
 
+/****** Footer & Footer Copyright ******/
+#footer {
+    width: 100%;
+    height: 216px;
+    background: #0d0d0d;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    margin: 3px 0 0;
+    color: #fff;
+}
 
+    #footer h2 {
+        color: #fff;
+        font-size: 20px;
+        padding: 0 0 13px;
+        font-weight: normal;
+    }
 
+    #footer p {
+        color: #fff;
+        padding: 0;
+        margin: 0;
+    }
 
+        #footer a:link, #footer a:visited {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #footer a:hover, #footer a:active {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+    #address {
+        display: inline-block;
+        vertical-align: top;
+        width: 310px;
+        min-height: 180px;
+        padding: 12px 0 0 20px;
+    }
+
+    #footer-nav {
+        display: inline-block;
+        vertical-align: top;
+        width: 312px;
+        min-height: 180px;
+        padding: 13px 0 0 2px;
+    }
+
+        #footer-nav ul {
+            list-style-type: none;
+            padding: 5px 0 0;
+            font-size: 11px;
+            margin: 0;
+        }
+
+            #footer-nav li {
+                border: 1px solid #333232;
+                border-width: 0 0 1px 0;
+                padding: 0 0 12px 0;
+            }
+
+    #contact-form {
+        display: inline-block;
+        vertical-align: top;
+        width: 300px;
+        padding: 13px 0 0 0;
+    }
+
+        #contact-form form {
+            padding: 15px 0 0 1px;
+        }
+
+            #contact-form input {
+                background: #262626;
+                border: none;
+                display: inline-block;
+                width: 99px;
+                margin: 0 0 19px 0;
+                font-size: 12px;
+                padding: 5px 0 5px 5px;
+            }
+
+            #contact-form #phone {
+                width: 208px;
+            }
+
+            #contact-form button {
+                font-size: 12px;
+                -moz-border-radius: 0;
+                -o-border-radius: 0;
+                -webkit-border-radius: 0;
+                border-radius: 0;
+                border: none;
+                text-align: center;
+                width: 61px;
+                background: -moz-linear-gradient(#242424, #0d0d0d);
+                background: -o-linear-gradient(#242424, #0d0d0d);
+                background: -webkit-linear-gradient(#242424, #0d0d0d);
+                background: linear-gradient(#242424, #0d0d0d);
+            }
 
 
 
