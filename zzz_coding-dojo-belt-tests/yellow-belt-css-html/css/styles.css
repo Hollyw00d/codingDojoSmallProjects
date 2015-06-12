@@ -776,9 +776,9 @@ a:hover, a:active {
     #footer-nav {
         display: inline-block;
         vertical-align: top;
-        width: 312px;
+        width: 291px;
         min-height: 180px;
-        padding: 13px 0 0 2px;
+        padding: 13px 20px 0 2px;
     }
 
         #footer-nav ul {
@@ -791,7 +791,7 @@ a:hover, a:active {
             #footer-nav li {
                 border: 1px solid #333232;
                 border-width: 0 0 1px 0;
-                padding: 0 0 12px 0;
+                padding: 12px 0 0 0;
             }
 
     #contact-form {
@@ -834,12 +834,13 @@ a:hover, a:active {
                 background: linear-gradient(#242424, #0d0d0d);
             }
 
+#footer-copyright {
+    width: 100%;
+    height: 38px;
+}
 
-
-
-
-
-
-
-
-
+    #footer-copyright p {
+        text-align: center;
+        color: #606060;
+        font-size: 11px;
+    }
