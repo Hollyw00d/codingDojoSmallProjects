@@ -429,18 +429,38 @@ body {
     position: relative;
     background: #eaeaea;
     font-family: Helvetica, Arial, sans-serif;
+    color: #606060;
 }
 
 h1 {
     font-family: "Times", serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 34px;
 }
 
 h2 {
     font-family: "Times", serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
 }
 
 h3 {
     font-family: "Times", serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+p {
+    font-size: 12px;
+    line-height: 20px;
 }
 
 #wrapper {
@@ -451,12 +471,12 @@ h3 {
     margin: 0 auto;
 }
 
-#final-web-design {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.4;
-}
+    #final-web-design {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.4;
+    }
 
 
 /****** Header, Logo, Nav ******/
@@ -529,4 +549,51 @@ h3 {
                         text-decoration: underline;
                     }
 
+
+/****** Main Content ******/
+#main-content {
+    width: 440px;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 270px;
+    overflow: auto;
+}
+
+    #left-main {
+        width: 440px;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+        #left-main h1 {
+            padding: 19px 0 0 18px;
+            letter-spacing: 1px;
+        }
+
+        #left-main p {
+            width: 350px;
+            padding: 7px 0 0 18px;
+        }
+
+        #learn-more {
+            background: #0d0d0d;
+            font-family: "Times", serif;
+            display: inline-block;
+            margin: 5px 0 0 239px;
+            padding: 3px 0;
+            text-align: center;
+            width: 110px;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+
+        #learn-more:link, #learn-more:visited {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #learn-more:hover, #learn-more:active {
+            color: #fff;
+            text-decoration: underline;
+        }
 
