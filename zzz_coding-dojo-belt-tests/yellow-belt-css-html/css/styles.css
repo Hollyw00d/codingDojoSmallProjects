@@ -552,7 +552,7 @@ p {
 
 /****** Main Content ******/
 #main-content {
-    width: 440px;
+    width: 100%;
     display: inline-block;
     vertical-align: top;
     min-height: 270px;
@@ -597,3 +597,12 @@ p {
             text-decoration: underline;
         }
 
+    #right-main {
+        width: 470px;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    #right-main img {
+        padding: 18px 0 0 39px;
+    }
