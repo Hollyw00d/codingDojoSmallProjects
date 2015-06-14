@@ -1,0 +1,10 @@
+-- MySQL Countries Assignment Answers
+
+1.
+SELECT countries.name, languages.language, languages.percentage FROM countries
+LEFT JOIN languages
+ON countries.id = languages.country_id
+WHERE languages.language LIKE "Slovene"
+ORDER BY languages.percentage DESC;
+
+2.
