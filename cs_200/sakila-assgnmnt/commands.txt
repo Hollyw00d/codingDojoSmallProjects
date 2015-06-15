@@ -106,52 +106,22 @@ ON film_category.category_id = category.category_id
 WHERE film.rental_rate = 2.99;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 8.
+A:
 What query would you run to get all the action films which are joined by SANDRA KILMER.
 Your query should return film title, description, release year, rating,
 special features, genre and actor's first name and last name.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Q:
+SELECT film.title, film.description, film.release_year, film.rating, film.special_features,
+category.name AS genre, actor.first_name, actor.last_name FROM film
+LEFT JOIN film_category
+ON film.film_id = film_category.film_id
+LEFT JOIN category
+ON film_category.category_id = category.category_id
+LEFT JOIN film_actor
+ON film.film_id = film_actor.film_id
+LEFT JOIN actor
+ON film_actor.actor_id = actor.actor_id
+WHERE actor.first_name LIKE "SANDRA" AND
+actor.last_name LIKE "KILMER";
