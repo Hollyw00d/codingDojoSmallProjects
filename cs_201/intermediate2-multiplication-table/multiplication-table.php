@@ -16,6 +16,15 @@
             text-align: center;
         }
 
+        .black-font {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .lavendar-bg {
+            background: #E6E6FA;
+        }
+
 
     </style>
 
@@ -24,36 +33,53 @@
 
 <h1>Intermediate 2 - Multiplication Table</h1>
 
-<?php
-function multiplication_table($max)
-{
-
-    for($i = 0; $i < $max; $i++)
+<table>
+    <?php
+    function multiplication_table($max)
     {
-        
+    ?>
+        <tr>
+            <td>&nbsp;</td>
+            <?php
+            for($h = 1; $h < $max + 1; $h++)
+            {
+                echo '<td class="black-font">' . $h . '</td>';
+            }
+            ?>
+        </tr>
+    <?php
+
+        for($i = 1; $i < $max + 1; $i++)
+        {
+
+
+            if($i % 2 !== 0)
+            {
+                echo '<tr class="lavendar-bg">';
+            }
+            else {
+                echo '<tr>';
+            }
+
+            echo '<td class="black-font">' . $i . '</td>';
+
+            for($j = 1; $j < $max + 1; $j++)
+            {
+                echo '<td>' . $j * $i . '</td>';
+            }
+            ?>
+
+        </tr>
+    <?php
+        }
+
     }
 
-}
-
-
-
-?>
-
-<table>
-    <tr>
-        <td>&nbsp;</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-    </tr>
+    multiplication_table(9);
+    ?>
 
 </table>
+
 
 </body>
 </html>
