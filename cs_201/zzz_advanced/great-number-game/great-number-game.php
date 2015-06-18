@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+// Set random number so it won't change
+// when session open
+//if(isset($_SESSION['rand_num_session']))
+//{
+//    $_SESSION['rand_num_session'] = rand(1, 2);
+//}
 ?>
 <!doctype html>
 <html lang="en">
@@ -38,20 +45,13 @@ $_SESSION['rand_num_session'] . '!!!';
 }
 ?></h3>
 
-<h6>Session Random Number: <?php echo $_SESSION['rand_num_session']; ?><br />
-My Guess: <?php echo $_SESSION['my_guess']; ?>
-</h6>
+<form class="hide-if-correct" action="processing.php" method="post">
 
+    <p><label for="guess"><input type="number" name="guess" placeholder="My Guess"/></label></p>
 
-    <form class="hide-if-correct" action="processing.php" method="post">
+    <p><label for="submit"><input type="submit" value="Submit"/></label></p>
 
-        <p><label for="guess"><input type="number" name="guess" placeholder="My Guess"/></label></p>
-
-        <p><label for="submit"><input type="submit" value="Submit"/></label></p>
-
-    </form>
-
-
+</form>
 
 <p><a href="reset.php">Reset Game</a></p>
 

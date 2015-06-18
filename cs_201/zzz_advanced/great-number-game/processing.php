@@ -1,7 +1,10 @@
 <?php
 session_start();
 
-$_SESSION['rand_num_session'] = rand(1, 2);
+if(!isset($_SESSION['rand_num_session']))
+{
+    $_SESSION['rand_num_session'] = rand(1, 100);
+}
 
 $_SESSION['my_guess'] = $_POST['guess'];
 
