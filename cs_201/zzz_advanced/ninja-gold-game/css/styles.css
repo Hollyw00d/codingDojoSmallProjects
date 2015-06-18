@@ -1,0 +1,60 @@
+/****** All CSS ******/
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#wrapper {
+    width: 960px;
+    min-height: 200px;
+    margin: 0 auto;
+}
+
+#your-gold-heading {
+    display: inline-block;
+}
+
+#gold-counter {
+    display: inline-block;
+    border: 2px solid black;
+    vertical-align: middle;
+    font-size: 16px;
+    padding: 6px;
+    margin: 0 0 0 10px;
+}
+
+#games {
+    width: 100%;
+    min-height: 200px;
+    padding: 10px 0 0;
+}
+
+.game {
+    width: 220px;
+    height: 160px;
+    float: left;
+    border: 2px solid black;
+    text-align: center;
+    margin: 0 15px 0 0;
+}
+
+input[type=submit] {
+    font-size: 40px;
+    text-align: center;
+    width: 110px;
+}
+
+#activities {
+    height: 150px;
+    border: 2px solid black;
+    overflow: auto;
+    padding: 10px;
+    line-height: 26px;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
