@@ -1,0 +1,14 @@
+/****** All CSS ******/
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#wrapper {
+    width: 960px;
+    min-height: 200px;
+    margin: 0 auto;
+}
+
+.red {
+    color: red;
+}
