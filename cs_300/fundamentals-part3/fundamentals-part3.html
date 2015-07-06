@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Fundamentals Part 3 - Coding Dojo</title>
+
+    <script type="text/javascript">
+        function personConstructor(name) {
+
+            // Create a JS object for the assignment
+            var person = {
+                name: name,
+                distance_travelled: 0,
+                say_name: alert(this.name),
+                say_something: function(sayText) {
+                    return alert(this.name + " says " + "'" + sayText + "'");
+                },
+                walk: function() {
+                    this.distance_travelled += 3;
+                    return alert(this.name + " is walking" + " and distance is " + this.distance_travelled);
+                },
+                run: function() {
+                    this.distance_travelled += 10;
+                    return alert(this.name + " is running" + " and distance is " + this.distance_travelled);
+                },
+                crawl: function() {
+                    this.distance_travelled += 1;
+                    return alert(this.name + " is crawling" + " and distance is " + this.distance_travelled);
+                }
+            };
+
+            return person;
+
+        }
+
+        var myName = personConstructor("Matt");
+
+        myName.say_something("boo yah!");
+
+        function ninjaConstructor(name) {
+            var ninja = {
+                name: name,
+                belt_level: 1,
+                levelUp: function() {
+                    this.belt_level++;
+                }
+            }
+
+            return ninja;
+        }
+
+        var newNinja = ninjaConstructor("Matt");
+        newNinja.levelUp();
+
+        console.log(newNinja);
+
+
+    </script>
+</head>
+<body>
+
+<h1>Fundamentals Part 3 - Coding Dojo</h1>
+
+</body>
+</html>
