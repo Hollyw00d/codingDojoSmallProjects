@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JS Fundamentals Part 2 - Coding Dojo Assignment</title>
+
+    <script type="text/javascript">
+        // Create a function that sums numbers between x and y
+        var sumNumbers = function(x, y) {
+            var sum = 0;
+
+            for(var i = x + 1; i < y; i++) {
+                sum += i;
+            }
+
+            console.log(sum);
+        }
+
+        sumNumbers(1, 10);
+
+
+        // Function that loops through an array, finds the minimum value and returns it
+        var findMin = function(arr) {
+            var min = arr[0];
+
+            for (var i = 0; i < arr.length; i++) {
+                if (min > arr[i]) {
+                    min = arr[i];
+                }
+            }
+            console.log(min);
+        }
+
+        var x = [1, 5, 90, 25, -3, 0];
+        findMin(x);
+
+
+        // Function that loops through an array, finds average value, & returns it
+        var findAvg = function(arr) {
+            var sum = 0;
+
+            for(var i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+
+            console.log(sum / arr.length);
+
+        }
+
+        var x = [1, 50, -10, 90];
+        findAvg(x);
+
+
+
+        // Create a JS object for the assignment
+        var person = {
+            name: "Matt",
+            distance_travelled: 0,
+            say_name: alert(this.name),
+            say_something: function(sayText) {
+                return alert(this.name + " says " + "'" + sayText + "'");
+            },
+            walk: function() {
+                this.distance_travelled += 3;
+                return alert(this.name + " is walking");
+            },
+            run: function() {
+                this.distance_travelled += 10;
+                return alert(this.name + " is running");
+            },
+            crawl: function() {
+                this.distance_travelled += 1;
+                return alert(this.name + " is crawling");
+            }
+        };
+
+        person.say_something("boo yah");
+        person.walk();
+        person.run();
+        person.crawl();
+
+
+
+
+    </script>
+</head>
+<body>
+
+<h1>JS Fundamentals Part 2 - Coding Dojo Assignment</h1>
+
+</body>
+</html>
