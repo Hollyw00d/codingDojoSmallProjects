@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JavaScript Fundamentals Part I - Coding Dojo Assignment</title>
+
+    <script type="text/javascript">
+        // 1. Log each array value
+        var x = [3.5, "Dojo", "rocks", "Michael", "Sensei"];
+
+        for(index in x) {
+            console.log(x[index]);
+        }
+
+        // 2. Add new value in array using push
+        x.push(100);
+        console.log(x);
+
+        // 3. Add new array as last element of "x"
+        var y = [4, 3, 2, 1];
+        x.push(y);
+        console.log(x);
+
+        // 4. Console log the final sum of numbers 1 through 500
+        var sum = 0;
+        for(var i = 1; i < 501; i++) {
+            sum += i;
+        }
+        console.log(sum);
+
+        // 5. Find minimum value in array
+        var x = [1, 5, 90, 25, -3, 0];
+        var min = x[0];
+
+        for(var i = 0; i < x.length; i++) {
+            if(min > x[i]) {
+                min = x[i];
+            }
+        }
+        console.log(min);
+
+        // 6. Find average of array values
+        var x = [1, 5, 90, 25, -3, 0];
+        var sum = 0;
+
+        for(var i = 0; i < x.length; i++) {
+            sum += x[i];
+        }
+
+        console.log(sum / x.length);
+
+    </script>
+</head>
+<body>
+
+<h1>JavaScript Fundamentals Part I - Coding Dojo Assignment</h1>
+
+</body>
+</html>
