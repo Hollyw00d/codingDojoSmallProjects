@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Creating Objects Part 1 - Coding Dojo Assignment</title>
+
+    <script type="text/javascript">
+        function VehicleConstructor(name, numWheels, numPassengers) {
+
+            var vehical = {};
+            vehical.name = name;
+            vehical.numWheels = numWheels;
+            vehical.numPassengers = numPassengers;
+
+            vehical.makeNoise = function (noise) {
+                console.log("A " + vehical.name + " has " + vehical.numWheels + " wheels and can hold " + vehical.numPassengers + " passenger(s). It makes a noise that goes '" + noise + "'.");
+            };
+
+            return vehical;
+        }
+
+        var bike = VehicleConstructor("bike", 2, 1);
+
+        bike.makeNoise = function() {
+            console.log("ring ring!");
+        };
+
+        bike.makeNoise();
+
+        var sedan = VehicleConstructor("sedan", 4, 5);
+        sedan.makeNoise("Honk Honk!");
+
+        var bus = VehicleConstructor("bus", 8, 20);
+
+        bus.pickUpPassengers = function(pickedUpPassengers) {
+            this.numPassengers += pickedUpPassengers;
+        }
+
+        bus.pickUpPassengers(10);
+
+        bus.makeNoise("BEEP! BEEP!");
+
+
+    </script>
+</head>
+<body>
+
+<h1>Creating Objects Part 1 - Coding Dojo Assignment</h1>
+
+</body>
+</html>
