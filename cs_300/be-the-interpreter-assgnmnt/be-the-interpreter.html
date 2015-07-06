@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Be the Interpreter Assignment</title>
+
+    <script type="text/javascript">
+        // Problem 1
+        console.log(first_variable);
+        var first_variable = "Yipee I was first!";
+        function firstFunc() {
+            first_variable = "Not anymore!!!";
+            console.log(first_variable)
+        }
+        console.log(first_variable);
+
+        // Rewritten for how JS interprets
+        var first_variable = undefined;
+        console.log(first_variable);
+
+        first_variable = "Yipee I was first!";
+
+        function firstFunc() {
+            var first_variable = undefined;
+            first_variable = "Not anymore!!!";
+        }
+
+        console.log(first_variable);
+
+
+        // Problem 2
+        var food = "Chicken";
+        function eat() {
+            food = "half-chicken";
+            console.log(food);
+            var food = "gone"; // NOTE I'M TRYING TO TRICK YOU HERE!!!!
+        }
+        eat();
+        console.log(food);
+
+        // Rewritten for how JS interprets
+        var food = undefined;
+        food = "Chicken";
+        function eat() {
+            var food = undefined;
+            food = "half-chicken";
+            console.log(food);
+            var food = undefined;
+            var food = "gone";
+        }
+
+        eat();
+        console.log(food);
+
+
+        // Problem 3
+        var newVar = "NEW!";
+        function lastFunc() {
+            newVar = "old";
+        }
+        console.log(newVar);
+
+        // Rewritten for how JS interprets
+        var newVar = undefined;
+        newVar = "NEW!";
+
+        function lastFunc() {
+            var newVar = undefined;
+            newVar = "old";
+        }
+
+        console.log(newVar);
+        
+
+    </script>
+</head>
+<body>
+
+    <h1>Be the Interpreter Assignment</h1>
+
+</body>
+</html>
