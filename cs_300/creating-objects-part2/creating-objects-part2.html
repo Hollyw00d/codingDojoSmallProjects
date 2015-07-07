@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Creating Objects Part 2 - Coding Dojo Assignment</title>
+
+    <script type="text/javascript">
+        function VehicleConstructor(name, numWheels, numPassengers, speed) {
+            var self = this;
+
+            this.name = name;
+            this.numWheels = numWheels;
+            this.numPassengers = numPassengers;
+            this.speed = speed;
+            var distance_travelled = 0;
+
+            var updateDistanceTravelled = function() {
+                distance_travelled += this.speed;
+            };
+
+            this.makeNoise = function() {
+                console.log("ring ring");
+                return this;
+            };
+
+            this.checkMiles = function() {
+                updateDistanceTravelled();
+                this.makeNoise();
+            };
+
+            this.move = function() {
+                updateDistanceTravelled();
+            };
+
+        }
+
+        var bike = new VehicleConstructor("bmx", 2, 1, 60);
+        bike.makeNoise = function() {
+            console.log("ring ring!");
+        };
+        bike.makeNoise();
+        bike.move();
+        bike.checkMiles();
+
+        var sedan = new VehicleConstructor("camry", 4, 5, 160);
+        sedan.makeNoise = function() {
+            console.log("Honk Honk!");
+        };
+        sedan.makeNoise();
+
+        var bus = new VehicleConstructor("bus", 8, 20, 90);
+        bus.pickUpPassengers = function(addPassengers) {
+            this.numPassengers += addPassengers;
+        }
+
+        bus.pickUpPassengers(10);
+        console.log(bus.numPassengers);
+
+
+    </script>
+</head>
+<body>
+
+<h1>Creating Objects Part 2 - Coding Dojo Assignment</h1>
+
+</body>
+</html>
