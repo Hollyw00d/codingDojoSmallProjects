@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Creating Objects Part 3 - Coding Dojo Assignment</title>
+
+    <script type="text/javascript">
+        function VehicleConstructor(name, numWheels, numPassengers, speed) {
+            this.name = name;
+            this.numWheels = numWheels;
+            this.numPassengers = numPassengers;
+            this.speed = speed;
+            this.distance_travelled = 0;
+
+            this.updateDistanceTravelled = function() {
+                this.distance_travelled += this.speed;
+            };
+        }
+
+        VehicleConstructor.prototype.makeNoise = function() {
+            console.log("ring ring");
+            return this;
+        };
+
+        VehicleConstructor.prototype.checkMiles = function() {
+            console.log("Checking distance travelled: ", this.distance_travelled);
+            return this;
+        };
+
+        VehicleConstructor.prototype.move = function() {
+            this.updateDistanceTravelled();
+            return this;
+        };
+
+        VehicleConstructor.prototype.generateRandomVIN = function(randomMin, randomMax) {
+            var randomVin = Math.floor(Math.random() * (randomMax - randomMin) + randomMin);
+            console.log(randomVin);
+            return this;
+        };
+
+        VehicleConstructor.prototype.bikeNoise = function() {
+            console.log("Watch out!");
+
+            return this;
+        };
+
+        VehicleConstructor.prototype.sedanNoise = function() {
+            console.log("Honk Honk!");
+            return this;
+        };
+
+        VehicleConstructor.prototype.pickUpPassengers = function(addPassengers) {
+            this.numPassengers += addPassengers;
+            console.log(this.numPassengers);
+            return this;
+        };
+
+        var bike = new VehicleConstructor("bmx", 2, 1, 60);
+
+        bike.bikeNoise();
+        bike.move();
+        bike.checkMiles();
+
+        bike.generateRandomVIN(100, 999);
+
+        var sedan = new VehicleConstructor("camry", 4, 5, 160);
+
+        sedan.sedanNoise();
+
+        var bus = new VehicleConstructor("bus", 8, 20, 90);
+
+        bus.pickUpPassengers(10);
+
+
+    </script>
+</head>
+<body>
+
+<h1>Creating Objects Part 3 - Coding Dojo Assignment</h1>
+
+</body>
+</html>
