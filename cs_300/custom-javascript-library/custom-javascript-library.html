@@ -46,9 +46,22 @@
 
 
 
-            reject: function() {
+            reject: function(list, predicate) {
+                var newArr = [];
+                for(index in list) {
+                    if(!predicate(list[index])) {
+                        newArr.push(list[index]);
+                    }
 
+                }
+
+                return newArr;
             }
+
+
+
+
+
         }
 
         // Show "map" variable in underscore
@@ -66,6 +79,10 @@
         // Show "filter" variable in underscore
         var filterTest = _.filter([1, 2, 3, 4, 5, 6], function(num) { return num % 2 == 0; });
         console.log("_.filter --> " + filterTest);
+
+        // Show "reject" variable in underscore
+        var rejectTest = _.reject([1, 2, 3, 4, 5, 6], function(num) { return num % 2 == 0; });
+        console.log("_.reject --> " + rejectTest);
 
     </script>
 </head>
