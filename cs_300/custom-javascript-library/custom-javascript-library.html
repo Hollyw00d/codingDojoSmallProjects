@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom JavaScript Library Assignment</title>
+
+    <script type="text/javascript">
+        var _ = {
+            map: function(arr, callback) {
+                var newArr = [];
+                for(index in arr) {
+                    newArr.push(callback(arr[index]));
+                }
+                return newArr;
+            },
+            reduce: function(arr, callback, memo) {
+
+                for(index in arr) {
+                    memo = callback(memo, arr[index]);
+                }
+
+                return memo;
+            },
+            find: function(list, predicate) {
+
+                for(index in list) {
+                    if(predicate(list[index])) {
+                        return list[index];
+                    }
+                }
+
+            },
+            filter: function(list, predicate) {
+                var newArr = [];
+                for(index in list) {
+                    if(predicate(list[index])) {
+                        newArr.push(list[index]);
+                    }
+
+                }
+
+                return newArr;
+            },
+
+
+
+
+
+            reject: function(list, predicate) {
+                var newArr = [];
+                for(index in list) {
+                    if(!predicate(list[index])) {
+                        newArr.push(list[index]);
+                    }
+
+                }
+
+                return newArr;
+            }
+
+
+
+
+
+        }
+
+        // Show "map" variable in underscore
+        var mapTest = _.map([1, 2, 3], function(num) { return num * 3; });
+        console.log("_.map --> " + mapTest);
+
+        // Show "reduce" variable in underscore
+        var reduceTest = _.reduce([1, 2, 3], function(memo, num) { return memo + num; }, 0);
+        console.log("_.reduce --> " + reduceTest);
+
+        // Show "find" variable in underscore
+        var findTest = _.find([1, 2, 3, 4, 5, 6], function(num) { return num % 2 == 0; });
+        console.log("_.find --> " + findTest);
+
+        // Show "filter" variable in underscore
+        var filterTest = _.filter([1, 2, 3, 4, 5, 6], function(num) { return num % 2 == 0; });
+        console.log("_.filter --> " + filterTest);
+
+        // Show "reject" variable in underscore
+        var rejectTest = _.reject([1, 2, 3, 4, 5, 6], function(num) { return num % 2 == 0; });
+        console.log("_.reject --> " + rejectTest);
+
+    </script>
+</head>
+<body>
+
+<h1>Custom JavaScript Library Assignment</h1>
+
+</body>
+</html>
