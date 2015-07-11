@@ -1,8 +1,6 @@
 // get the http module
 var http = require("http");
 
-
-
 // fs module allows us to read and write content for responses
 var fs = require("fs");
 
@@ -12,8 +10,24 @@ var server = http.createServer(function (request, response) {
     console.log("client request URL: ", request.url);
     // this is how we do routing
     if(request.url == "/") {
-        fs.readFile("index.html", "utf8", function (errors, contents) {
+        fs.readFile("./index.html", "utf8", function (errors, contents) {
             response.writeHead(200, {"Content-Type" : "text/html"});
+            response.write(contents);
+            response.end();
+        });
+    }
+
+    else if(request.url === "/css/styles.css") {
+        fs.readFile("./css/styles.css", "utf8", function(errors, contents) {
+            response.writeHead(200, {"Content-Type": "text/css"});
+            response.write(contents);
+            response.end();
+        });
+    }
+
+    else if(request.url === "/dojo.html") {
+        fs.readFile("./dojo.html", "utf8", function(errors, contents) {
+            response.writeHead(200, {"Content-Type": "text/html"});
             response.write(contents);
             response.end();
         });
