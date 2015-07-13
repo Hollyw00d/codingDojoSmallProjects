@@ -1,0 +1,13 @@
+/****** Custom CSS ******/
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#wrapper {
+    margin: 0 auto;
+    padding: 20px;
+    width: 920px;
+}
+
