@@ -1,9 +1,9 @@
 {
-  "name": "expressjs",
-  "description": "My first ExpressJS App",
+  "name": "views-example",
+  "description": "Example Views using Node.js",
   "version": "0.0.1",
-  "private": "true",
   "dependencies": {
-    "express": "~4.13.1"
+    "express": "4.13.x",
+    "ejs": "2.3.x"
   }
 }
