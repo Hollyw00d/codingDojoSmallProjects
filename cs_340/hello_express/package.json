@@ -1,0 +1,9 @@
+{
+  "name": "expressjs",
+  "description": "My first ExpressJS App",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "express": "4.x"
+  }
+}
