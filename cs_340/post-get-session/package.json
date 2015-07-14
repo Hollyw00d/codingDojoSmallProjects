@@ -1,0 +1,11 @@
+{
+  "name": "views-example",
+  "description": "Example Views using Node.js",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "4.13.x",
+    "ejs": "2.3.x",
+    "body-parser": "1.13.x",
+    "express-session": "1.11.x"
+  }
+}
