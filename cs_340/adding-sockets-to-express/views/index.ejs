@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+           // triggers the connect event in our server
+           var socket = io.connect();
+
+            // On button click...
+            $("button").on("click", function() {
+                // When a button is clicked this line
+                // emits to
+                // the socket.on("button_clicked", ...)
+                // method and the "response"
+                // property name must appear
+                // on the server (server.js)
+                socket.emit("button_clicked", {response: "Because I want to learn about sockets!"});
+            });
+
+            // The socket.on("server_response") method
+            // is executed when the
+            // socket.emit("server_response") method is
+            // executed server side, the
+            // console log message appears in the
+            // browser terminal and the "response" property
+            // must "response" property name on the
+            // server side
+            socket.on("server_response", function(data) {
+                console.log("The server says: " + data.response);
+            });
+        });
+    </script>
+    <title>Socket.io Node Package Test</title>
+</head>
+<body>
+
+    <h1>Socket.io Node Package Test</h1>
+
+    <button>I am a button!</button>
+
+</body>
+</html>
