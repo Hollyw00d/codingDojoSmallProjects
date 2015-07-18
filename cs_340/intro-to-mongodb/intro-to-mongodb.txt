@@ -1,0 +1,43 @@
+** Commands **
+1. use my_first_db
+
+2. db.createCollection("students")
+
+3. db.students.insert( {name: "Maria", home_state: "AK", lucky_number: 666, birthday: {month: 6, day: 20, year: 1990} } )
+
+4. [More similar insert commands were included]
+
+5. db.students.find().pretty()
+
+6. [Not applicable]
+
+7.1. db.students.find( {lucky_number: {$gt: 3} } )
+
+7.2. db.students.find( {lucky_number: {$gte: 10} } )
+
+7.3. db.students.find( {lucky_number: {$gte: 1, $lte: 9} } )
+
+8. db.students.update( {}, {$push: {interests: {$each: ["coding", "brunch", "MongoDB"]} }}, {multi: true} );
+
+9. db.students.update( {name: "Maria"}, {$push: {interests: "music"}} )
+[More similar commands were included]
+
+10. db.students.update( {name: "Maria"}, {$push: {interests: "taxes"}} )
+
+11. db.students.update( {name: "Maria"}, {$pop: {interests: 1}} )
+
+12. [Not applicable]
+
+13. db.students.remove( {name: "Jose"} )
+
+14. [Couldn't figure out how to do this]
+
+15. db.students.update( {}, {$set: {number_of_belts: 0}}, {multi: true} );
+
+16. db.students.update( {}, {$set: {number_of_belts: 1}}, {multi: true} );
+
+17. db.students.update( {}, {$rename: {"number_of_belts": "belts_earned"}}, {multi: true} );
+
+18. db.students.update( {}, {$unset: {lucky_number: ""}}, {multi: true} )
+
+19. db.students.update( {}, {$set: { updated_on: new Date() } }, {multi: true} );
