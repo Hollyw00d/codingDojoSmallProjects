@@ -1,0 +1,13 @@
+{
+  "name": "basic_mongoose_app",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "1.13.x",
+    "ejs": "2.3.x",
+    "express": "4.13.x",
+    "mongoose": "4.0.x"
+  }
+}
