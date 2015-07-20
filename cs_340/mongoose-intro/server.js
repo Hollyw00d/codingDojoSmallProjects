@@ -21,23 +21,41 @@ app.set("view engine", "ejs");
 var mongoose = require("mongoose");
 
 // Connect to a MongoDB Database named
-// "basic_mongoose"
+// "basic_mongoose" and if this Database doesn't exist
+// create it!
 mongoose.connect("mongodb://localhost/basic_mongoose");
 
+// Create a new schema instance of the mongoose.Schema(...)
+// object constructor which takes a
+// JSON object as a parameter with schema types like
+// "String" and "Number"
 var UserSchema = new mongoose.Schema({
     name: String,
     age: Number
 });
 
+// Create a blueprint object and
+// create the necessary database collection out of the model
 var User = mongoose.model("User", UserSchema);
 
 // Index route
 app.get("/", function(req, res) {
-    //User.find({}, function(err, users) {
-    //    res.send(users);
-    //});
 
-    res.render("index");
+    // Execute the "User" model to display documents
+    // in the "user" collection
+    User.find({}, function(err, users) {
+        // If errors exist console log them on terminal server-side
+        if(err) {
+            console.log("Error:", err);
+        }
+        // Else render "index.ejs" and pass a "users" object with the
+        // "users" MongoDB collection
+        // of the "basic_mongoose" Database to "index.ejs"
+        else {
+            res.render("index", {users: users});
+        }
+    });
+
 });
 
 // Route to add a user

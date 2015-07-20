@@ -14,9 +14,14 @@
     <p><input type="submit" value="Submit"/></p>
 </form>
 
-<h2><em>Users</em> Collection</h2>
+<h2><em>users</em> Collection</h2>
 
-
+<% for(var user in users) { %>
+    <ul>
+        <li>Name: <%= users[user].name %><br />
+            Age: <%= users[user].age %></li>
+    </ul>
+<% } %>
 
 </body>
 </html>
