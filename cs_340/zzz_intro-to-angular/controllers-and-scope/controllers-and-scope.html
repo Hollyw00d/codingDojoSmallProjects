@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+'<html ng-app="myApp">' directive below ensures that the "myApp" Angular module can be
+accessed in either an embedded JS or external JS file
+-->
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Controllers and Scope</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+    <script type="text/javascript">
+    // This "myApp" variable glues the module below
+    // to the '<html ng-app="myApp">' directive above
+    var myApp = angular.module("myApp", []);
+
+    // the ".controller()" method adds a controller to this module AND
+    // $scope is an object that glues the view (the HTML)
+    // to this "studentsController" controller
+    myApp.controller("studentsController", function($scope) {
+        $scope.students = [
+            {name: "Trey", age: 24},
+            {name: "Andres", age: 22},
+            {name: "Michael", age: 34}
+        ];
+
+        // "$scope" binds to the "students" array that
+        // is ONLY in the HTML element with the
+        // 'ng-controller="studentsController"' directive and reverses its elements
+        $scope.students.reverse();
+
+        // This "$scope.addStudent()" method executes when the
+        // input element, that is inside the 'ng-controller="studentsController"' directive,
+        // with the 'ng-click="addStudent()"' directive gets clicked
+        $scope.addStudent = function() {
+            // Push the "newStudent" form values into the
+            // "students" array as an object of "name" and "age"
+            // property name and value pairs as the first element using
+            // "unshift" and increment every other array element up by one
+            $scope.students.unshift($scope.newStudent);
+
+            // Clears all items from the "newStudent" object
+            // to add more later
+            $scope.newStudent = {};
+        };
+    });
+    </script>
+</head>
+<body>
+
+<h1>Controllers and Scope</h1>
+
+<!--
+Execute AngularJS from the "studentsController" here because of
+'ng-controller="studentsController"' directive
+-->
+<div ng-controller="studentsController">
+    <h2>Current Students</h2>
+    <ul>
+        <!--
+        Execute a for in loop to display all "student" array elements
+        -->
+        <li ng-repeat="student in students">{{ student.name }}, {{ student.age }}</li>
+    </ul>
+
+    <h2>Add a New Student</h2>
+    <form>
+        <p>Name: <input type="text" ng-model="newStudent.name"/></p>
+        <p>Age: <input type="text" ng-model="newStudent.age"/></p>
+        <!--
+        Execute the "$scope.addStudent" method when the input element is clicked
+        because of the "ng-click=addStudent()" directive
+        -->
+        <p><input ng-click="addStudent()" type="submit" value="Add Student"/></p>
+    </form>
+</div>
+
+</body>
+</html>
