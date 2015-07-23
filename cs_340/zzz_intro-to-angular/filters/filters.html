@@ -32,10 +32,17 @@
 <!-- "ng-controller" points to the "friendsController" controller -->
 <div ng-controller="friendsController">
 
-    <!-- in "ng-model" directive the "filter_name" is the name of the filter filter -->
+    <!-- in "ng-model" directive the "filter_name" using the "name" to filter by -->
     <p>Search Friends: <input type="text" ng-model="filter_name"/></p>
 
     <ul>
+        <!--
+         - This "filter_name" is shown below and must also be in a model above
+
+         - The "orderBy" orders the result by "name" alphabetically
+
+         - "{{ friend.age | number: 0 }}" means show  "0" decimal points after the age
+         -->
         <li ng-repeat="friend in friends | filter:filter_name | orderBy: 'name'">
             {{ friend.name }} - age {{ friend.age | number: 0 }}, gender {{ friend.gender | uppercase }}
         </li>
