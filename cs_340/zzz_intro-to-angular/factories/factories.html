@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+'<html ng-app="myApp">' directive below ensures that the "myApp" Angular module can be
+accessed in either an embedded JS or external JS file
+-->
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Factories</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+    <script type="text/javascript">
+        // This "myApp" variable glues the module below
+        // to the '<html ng-app="myApp">' directive above
+        var myAppModule = angular.module("myApp", []);
+
+        // Add a factory to the module and this factory
+        // gets data that is passed to the controller
+        myAppModule.factory("studentFactory", function() {
+            // An array with objects as elements to be passed to the controller
+            var students = [
+                {name: "Trey", age: 24},
+                {name: "Andres", age: 22},
+                {name: "Michael", age: 34}
+            ];
+
+            // Reverse order of the array
+            students.reverse();
+
+            var factory = {};
+
+            // Add a "getStudents" method to the object we defined
+            factory.getStudents = function(callback) {
+                // Pass the students to a callback to be used by whoever calls the method
+                callback(students);
+            };
+
+            // Return the object so it can be used by the rest of the Angular code
+            return factory;
+        });
+
+        // build the controller and inject the "studentFactory" into it
+        myAppModule.controller("studentsController", function($scope, studentFactory) {
+
+            // Initalize an empty array so $scope.students maintains a consistent data type
+            $scope.students = [];
+
+            // Run the "getStudents" method and set "$scope" "data" in the callback
+            studentFactory.getStudents(function(data) {
+                $scope.students = data;
+            });
+
+            // This "$scope.addStudent()" method executes when the
+            // input element, that is inside the 'ng-controller="studentsController"' directive,
+            // with the 'ng-click="addStudent()"' directive gets clicked
+            $scope.addStudent = function() {
+                // Push the "newStudent" form values into the
+                // "students" array as an object of "name" and "age"
+                // property name and value pairs as the first element using
+                // "unshift" and increment every other array element up by one
+                $scope.students.unshift($scope.newStudent);
+
+                // Clears all items from the "newStudent" object
+                // to add more later
+                $scope.newStudent = {};
+            };
+        });
+    </script>
+</head>
+<body>
+
+<h1>Factories</h1>
+
+<!--
+Execute AngularJS from the "studentsController" here because of
+'ng-controller="studentsController"' directive
+-->
+<div ng-controller="studentsController">
+    <h2>Current Students</h2>
+    <ul>
+        <!--
+        Execute a for in loop to display all "student" array elements
+        -->
+        <li ng-repeat="student in students">{{ student.name }}, {{ student.age }}</li>
+    </ul>
+
+    <h2>Add a New Student</h2>
+    <form>
+        <p>Name: <input type="text" ng-model="newStudent.name"/></p>
+        <p>Age: <input type="text" ng-model="newStudent.age"/></p>
+        <!--
+        Execute the "$scope.addStudent" method when the input element is clicked
+        because of the "ng-click=addStudent()" directive
+        -->
+        <p><input ng-click="addStudent()" type="submit" value="Add Student"/></p>
+    </form>
+</div>
+
+</body>
+</html>
