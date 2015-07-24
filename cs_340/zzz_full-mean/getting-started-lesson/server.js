@@ -6,8 +6,11 @@ var app = express();
 
 app.use(express.static(path.join(__dirname + "/client")));
 
-require("./config/routes.js")(app);
+// Require mongoose
+require("./server/config/mongoose.js");
 
+// Require "routes.js"
+require("./server/config/routes.js")(app);
 
 app.get("/", function(req, res) {
     res.render("index.html");

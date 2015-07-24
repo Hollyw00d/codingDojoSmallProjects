@@ -7,11 +7,33 @@
         // Lets create our angular module
         var friends_app = angular.module('friends_app', []);
 
-        // create the FriendFactory
+        // create the FriendFactory and pass in the "$http" service/function
         friends_app.factory('FriendFactory', function($http) {
             var factory = {};
             var friends = [];
             factory.getFriends = function(callback) {
+                // the "$http" service is a function that takes a single argument
+                // that is used to generate an HTTP request and
+                // returns a promise with two "$http" specific methods:
+                // - "success"
+                // - "error"
+
+                // A "promise" uses asynchronous javascript,
+                // which is JS that can execute after other code have executed.
+                // It also represents a future value which will be returned later
+                // from the single completion of an operation.
+
+                // The '$http.get("/friends")' code below is the promise which will
+                // return an object later in the code.
+
+                // For example the "friends" variable below is currently defined as
+                // "var friends = [];" but will be redefined later in this code as:
+                // $scope.friends = [{name: "Michael", age: 34}, {name: "Andrew", age: 24}];
+
+                // In all JS libraries/frameworks promised use a syntax similar to:
+                // Promise.success().error();, Promise(success, error) OR
+                // more generally a promise followed by an a success parameter or value and an
+                // optional error parameter or value
                 $http.get("/friends").success(function(output) {
                     friends = output;
                     callback(friends);
@@ -41,7 +63,7 @@
 
                     FriendFactory.getFriends(function(data) {
                         $scope.friends = data;
-
+                        console.log("New Friend Added:", $scope.friends);
                     });
                     $scope.new_friend = {};
 
