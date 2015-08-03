@@ -6,6 +6,7 @@ Long line of comments!!!
 
 =end
 
+# "puts" is a method
 puts "hello"
 puts "Coding"
 puts "Dojo"
