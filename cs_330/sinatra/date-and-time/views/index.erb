@@ -1,0 +1,24 @@
+<!doctype>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Date and Time</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <div id="date-time-heading">
+          The current time and date:
+        </div>
+
+        <div id="date-time-value">
+            <%= @month.to_s + " " + @day_of_month.to_s + ", " + @year.to_s %><br />
+            <%= @hour.to_s + ":" + @minutes.to_s + " " + @am_pm %>
+        </div>
+
+    </div>
+
+</body>
+</html>
