@@ -14,3 +14,14 @@ body {
 .important {
     font-weight: bold;
 }
+
+#new-user-form label {
+    display: inline-block;
+    width: 120px;
+}
+
+#new-user-form input[type=text] {
+    display: inline-block;
+    width: 180px;
+    padding: 3px;
+}

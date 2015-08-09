@@ -10,7 +10,13 @@ ActiveRecord::Base.establish_connection(
 class User < ActiveRecord::Base
 end
 
+# View all rows in "users" table
 get "/users" do
   @users = User.all
   erb :"users/index"
+end
+
+# Add a new row in "users" table
+get "/users/new" do
+  erb :"users/new"
 end
