@@ -20,3 +20,10 @@ end
 get "/users/new" do
   erb :"users/new"
 end
+
+# Add a new user using the "Add a New User" form
+post "/users" do
+  # Access the POST variables using the "params" hash
+  User.create(first_name: params[:first_name], last_name: params[:last_name])
+  redirect "/users"
+end
