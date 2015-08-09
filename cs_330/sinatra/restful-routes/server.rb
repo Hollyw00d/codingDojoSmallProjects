@@ -27,3 +27,15 @@ post "/users" do
   User.create(first_name: params[:first_name], last_name: params[:last_name])
   redirect "/users"
 end
+
+# Show a single user
+get "/users/:id" do
+  @user = User.find(params[:id])
+  erb :"users/show"
+end
+
+
+
+
+
+
