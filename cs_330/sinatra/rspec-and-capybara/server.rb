@@ -15,3 +15,9 @@ end
 get "/" do
   "Welcome to my portfolio"
 end
+
+get "/projects" do
+  # Get all projects
+  @projects = Project.all
+  erb :"projects/index"
+end
