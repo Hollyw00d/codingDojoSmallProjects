@@ -4,6 +4,21 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+h1 {
+    line-height: 35px;
+}
+
+a, a:link, a:visited {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: blue;
+    text-decoration: underline;
+}
+
+
 #wrapper {
     width: 920px;
     padding: 20px;
@@ -24,4 +39,12 @@ body {
     display: inline-block;
     width: 180px;
     padding: 3px;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
 }

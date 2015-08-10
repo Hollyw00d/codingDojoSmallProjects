@@ -35,6 +35,12 @@
 
   <p>&raquo; <a href="/users/<%= @user.id %>">See <%= @user.first_name %> <%= @user.last_name %> User Profile</a></p>
 
+  <form action="/logout" method="post">
+    <p>
+      <input type="submit" value="Log Out" />
+    </p>
+  </form>
+
 </div><!-- #wrapper -->
 
 </body>
