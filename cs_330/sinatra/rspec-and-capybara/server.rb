@@ -53,4 +53,9 @@ patch "/projects/:id" do
   redirect "/projects"
 end
 
-
+# User "delete" to delete a single project
+delete "/projects/:id" do
+  project = Project.find(params[:id])
+  project.destroy
+  redirect "/projects"
+end

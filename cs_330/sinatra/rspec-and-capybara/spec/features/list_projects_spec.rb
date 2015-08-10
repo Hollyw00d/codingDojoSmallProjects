@@ -66,4 +66,17 @@ RSpec.describe "listing projects" do
     expect(page).to have_text("Changed")
     expect(page).to have_text("My changed project")
   end
+
+  it "destroys project and redirects to projects page" do
+    p1 = Project.create(name: "Project", description: "Project description")
+    p2 = Project.create(name: "Reject", description: "Reject description")
+
+    visit "/projects/#{p2.id}/edit"
+    expect(page.status_code).to eq(200)
+
+    click_button "Delete Project"
+    expect(current_path).to eq("/projects")
+    expect(page).to have_text(p1.name)
+    expect(page).to_not have_text(p2.name)
+  end
 end

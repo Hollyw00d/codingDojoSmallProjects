@@ -26,6 +26,13 @@
     </p>
   </form>
 
+  <form action="/projects/<%= @project.id %>" method="post">
+    <input type="hidden" name="_method" value="delete" />
+    <p>
+      <input type="submit" value="Delete Project" />
+    </p>
+  </form>
+
   <p>&nbsp;</p>
 
   <p class="important"><a href="/projects">&raquo; View All Project</a></p>
