@@ -26,6 +26,13 @@
     </p>
   </form>
 
+  <form action="/users/<%= @user.id %>" method="post">
+    <input type="hidden" name="_method" value="delete" />
+    <p>
+      <input type="submit" value="Delete User" />
+    </p>
+  </form>
+
   <p>&raquo; <a href="/users/<%= @user.id %>">See <%= @user.first_name %> <%= @user.last_name %> User Profile</a></p>
 
 </div><!-- #wrapper -->

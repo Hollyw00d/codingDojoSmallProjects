@@ -40,15 +40,25 @@ get "/users/:id/edit" do
   erb :"users/edit"
 end
 
-# Patch connected to the
-# edit single user post method in
-# the HTML form tag
+# "patch" connected to the
+# hidden input tag which is contained
+# inside the '<form id="user-form" action="/users/<%= @user.id %>" method="post">' tag:
+# '<input type="hidden" name="_method" value="patch" />'
 patch "/users/:id" do
   user = User.find(params[:id])
   user.update(first_name: params[:first_name], last_name: params[:last_name])
   redirect "/users/#{user.id}"
 end
 
+# "patch" connected to the
+# hidden input tag which is contained
+# inside the '<form action="/users/<%= @user.id %>" method="post">' tag:
+# '<input type="hidden" name="_method" value="delete" />'
+delete "/users/:id" do
+  user = User.find(params[:id])
+  user.destroy
+  redirect "/users"
+end
 
 
 
