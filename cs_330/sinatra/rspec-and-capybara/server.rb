@@ -21,3 +21,27 @@ get "/projects" do
   @projects = Project.all
   erb :"projects/index"
 end
+
+get "/projects/new" do
+  erb :"projects/new"
+end
+
+# Add a new project using the "Add New Project" form
+post "/projects" do
+  # Get the text inside the INPUT, TEXTAREA tags
+  # using the "params" hash
+  Project.create(name: params[:name], description: params[:description])
+  redirect "/projects"
+end
+
+# Show a single project
+get "/projects/:id" do
+  @project = Project.find(params[:id])
+  erb :"projects/show"
+end
+
+# Show a single project to edit
+get "/projects/:id/edit" do
+  @project = Project.find(params[:id])
+  erb :"projects/edit"
+end

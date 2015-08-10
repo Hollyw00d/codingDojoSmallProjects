@@ -11,11 +11,16 @@
 
   <h1>All Projects</h1>
 
-  <ul>
+  <ul id="projects-list">
     <% @projects.reverse.each do |p| %>
-        <li><a href="/projects/<%= p.id %>"><%= p.name %><br /><%= p.description %></a></li>
+        <li><strong>Name:</strong> <%= p.name %><br /><strong>Description:</strong> <%= p.description %><br />
+          <a href="/projects/<%= p.id %>">&raquo; Show Project</a></li>
     <% end %>
   </ul>
+
+  <p>&nbsp;</p>
+
+  <p class="important"><a href="/projects/new">&raquo; Add New Project</a></p>
 
 </div>
 
