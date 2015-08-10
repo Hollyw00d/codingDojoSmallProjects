@@ -1,0 +1,29 @@
+<!doctype>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title><%= @user.first_name %> <%= @user.last_name %> User Profile</title>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+</head>
+<body>
+
+<div id="wrapper">
+
+  <h1><%= @user.first_name %> <%= @user.last_name %> User Profile</h1>
+
+  <ul>
+    <li><a href="/users/<%= @user.id %>/edit">Edit User Profile</a></li>
+  </ul>
+
+  <p class="important"><a href="/users">&raquo; See All Users</a></p>
+
+  <form action="/logout" method="post">
+    <p>
+      <input type="submit" value="Log Out" />
+    </p>
+  </form>
+
+</div><!-- #wrapper -->
+
+</body>
+</html>

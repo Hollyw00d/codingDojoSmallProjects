@@ -1,0 +1,50 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    line-height: 35px;
+}
+
+a, a:link, a:visited {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: blue;
+    text-decoration: underline;
+}
+
+
+#wrapper {
+    width: 920px;
+    padding: 20px;
+    margin: 0 auto;
+    line-height: 26px;
+}
+
+.important {
+    font-weight: bold;
+}
+
+#user-form label {
+    display: inline-block;
+    width: 120px;
+}
+
+#user-form input[type=text] {
+    display: inline-block;
+    width: 180px;
+    padding: 3px;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}

@@ -1,0 +1,46 @@
+<!doctype>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Simple Sinatra and Active Record Ruby Framework CRUD (Create Read Update Delete) Demo</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+<body>
+
+<div id="wrapper">
+
+  <h1>Simple Sinatra and Active Record Ruby Framework<br />CRUD (Create Read Update Delete) Demo</h1>
+
+  <p><span class="error important">Note:</span></p>
+    <ul>
+        <li>This demo was created by Matt Jennings. <a href="http://www.mattjennings.net/contact" target="_blank">Contact him</a> to get a password to enter this website.</li>
+        <li>If entered the correct password and click the <strong>Log In</strong> button below you will be redirected to a <em><strong>All Users</strong></em> page.</li>
+    </ul>
+
+  <p>&nbsp;</p>
+
+  <form id="user-form" action="/login" method="post">
+    <p>
+      <label for="password">Password:</label>
+      <input type="password" name="password" />
+    </p>
+    <p>
+      <input type="submit" value="Log In" />
+    </p>
+  </form>
+
+  <form action="/logout" method="post">
+    <p>
+      <input type="submit" value="Log Out" />
+    </p>
+  </form>
+
+  <p>&nbsp;</p>
+
+  <p class="important"><a href="/users">&raquo; Go to All Users page</a><br />
+  <em>*Must be logged in to create/read/update/delete users!</em></p>
+
+</div><!-- #wrapper -->
+
+</body>
+</html>

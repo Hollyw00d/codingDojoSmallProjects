@@ -1,0 +1,26 @@
+<!doctype>
+<html>
+<head>
+  <title>Show the <%= @project.name %> Project</title>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+</head>
+
+<body>
+
+<div id="wrapper">
+
+  <h1>Show the <%= @project.name %> Project</h1>
+
+  <ul id="projects-list">
+        <li><strong>Name:</strong> <%= @project.name %><br /><strong>Description:</strong> <%= @project.description %><br />
+          <a href="/projects/<%= @project.id %>/edit">&raquo; Edit Project</a></li>
+  </ul>
+
+  <p>&nbsp;</p>
+
+  <p class="important"><a href="/projects">&raquo; Show All Projects</a></p>
+
+</div>
+
+</body>
+</html>
