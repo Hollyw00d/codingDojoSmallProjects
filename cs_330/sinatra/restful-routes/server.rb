@@ -34,6 +34,20 @@ get "/users/:id" do
   erb :"users/show"
 end
 
+# Page to edit a single user
+get "/users/:id/edit" do
+  @user = User.find(params[:id])
+  erb :"users/edit"
+end
+
+# Patch connected to the
+# edit single user post method in
+# the HTML form tag
+patch "/users/:id" do
+  user = User.find(params[:id])
+  user.update(first_name: params[:first_name], last_name: params[:last_name])
+  redirect "/users/#{user.id}"
+end
 
 
 

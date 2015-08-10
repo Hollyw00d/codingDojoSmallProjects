@@ -1,0 +1,34 @@
+<!doctype>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Edit <%= @user.first_name %> <%= @user.last_name %> User Profile</title>
+  <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+</head>
+<body>
+
+<div id="wrapper">
+
+  <h1>Edit <%= @user.first_name %> <%= @user.last_name %> User Profile</h1>
+
+  <form id="user-form" action="/users/<%= @user.id %>" method="post">
+    <input type="hidden" name="_method" value="patch" />
+    <p>
+      <label for="first_name">First Name:</label>
+      <input type="text" name="first_name" value="<%= @user.first_name %>" />
+    </p>
+    <p>
+      <label for="last_name">Last Name:</label>
+      <input type="text" name="last_name" value="<%= @user.last_name %>" />
+    </p>
+    <p>
+      <input type="submit" value="Update User" />
+    </p>
+  </form>
+
+  <p>&raquo; <a href="/users/<%= @user.id %>">See <%= @user.first_name %> <%= @user.last_name %> User Profile</a></p>
+
+</div><!-- #wrapper -->
+
+</body>
+</html>
