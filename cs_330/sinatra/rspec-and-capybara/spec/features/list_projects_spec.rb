@@ -52,4 +52,18 @@ RSpec.describe "listing projects" do
     expect(page).to have_field("name")
     expect(page).to have_field("description")
   end
+
+  it "updates project and redirects to projects page" do
+    project = Project.create(name: "Project 1", description: "First project")
+    visit "/projects/#{project.id}/edit"
+    expect(page.status_code).to eq(200)
+    fill_in "name", with: "Changed"
+    fill_in "description", with: "My changed project"
+    click_button "Update Project"
+    expect(current_path).to eq("/projects")
+    expect(page).not_to have_text("Project 1")
+    expect(page).not_to have_text("First Project")
+    expect(page).to have_text("Changed")
+    expect(page).to have_text("My changed project")
+  end
 end

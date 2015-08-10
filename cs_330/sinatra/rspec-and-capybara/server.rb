@@ -45,3 +45,12 @@ get "/projects/:id/edit" do
   @project = Project.find(params[:id])
   erb :"projects/edit"
 end
+
+# Use "patch" to update a single project
+patch "/projects/:id" do
+  project = Project.find(params[:id])
+  project.update(name: params[:name], description: params[:description])
+  redirect "/projects"
+end
+
+
