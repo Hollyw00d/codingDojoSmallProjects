@@ -30,12 +30,12 @@ a:hover, a:active {
     font-weight: bold;
 }
 
-#project-form label {
+#users-form label {
     display: inline-block;
     width: 120px;
 }
 
-#project-form input[type=text] {
+#users-form input[type=text] {
     display: inline-block;
     width: 180px;
     padding: 3px;
@@ -49,20 +49,20 @@ a:hover, a:active {
     color: green;
 }
 
-#projects-list {
+#users-list {
     list-style-position: inside;
     margin: 0;
     padding: 0;
 }
 
-#projects-list li {
+#users-list li {
     margin: 0 0 10px 0;
     padding: 10px;
     border: 1px solid #000;
     list-style-type: none;
 }
 
-#projects-list strong {
+#users-list strong {
     display: inline-block;
     width: 120px;
 }

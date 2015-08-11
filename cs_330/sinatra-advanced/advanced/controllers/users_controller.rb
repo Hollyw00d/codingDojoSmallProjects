@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @title = "All Users"
 
     erb :main_layout do
+      @users = User.all
       erb :"users/index"
     end
   end

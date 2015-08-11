@@ -5,8 +5,12 @@
 
 require_relative "server"
 
+map("/css/styles.css"){ run CssController }
+
 # Code below means when I go to
 # localhost:9292/welcomes the "WelcomesController" runs
 map("/welcomes"){ run WelcomesController }
 
 map("/users"){ run UsersController }
+
+map("/users/new"){ run NewUserController }

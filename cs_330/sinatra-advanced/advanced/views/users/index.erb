@@ -1,0 +1,5 @@
+<h1><%= @title %></h1>
+
+<% @users.each do |u| %>
+    <p><%= u.first_name %> <%= u.last_name %></p>
+<% end %>

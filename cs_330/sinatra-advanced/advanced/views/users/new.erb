@@ -1,0 +1,32 @@
+<h1><%= @title %></h1>
+
+<form id="users-form" action="/users/new" method="post">
+    <p>
+      <label for="email">Email:</label>
+      <input name="email" type="email" />
+    </p>
+
+    <p>
+      <label for="first_name">First Name:</label>
+      <input name="first_name" type="text" />
+    </p>
+
+    <p>
+      <label for="last_name">Last Name:</label>
+      <input name="last_name" type="text" />
+    </p>
+
+    <p>
+      <label for="password">Password:</label>
+      <input name="password" type="password" />
+    </p>
+
+    <p>
+      <label for="confirm_password">Confirm Password:</label>
+      <input name="confirm_password" type="password" />
+    </p>
+
+    <p>
+      <input type="submit" value="Create User" />
+    </p>
+</form>
