@@ -7,4 +7,6 @@ require_relative "server"
 
 # Code below means when I go to
 # localhost:9292/welcomes the "WelcomesController" runs
-map("/welcomes") { run WelcomesController }
+map("/welcomes"){ run WelcomesController }
+
+map("/users"){ run UsersController }
