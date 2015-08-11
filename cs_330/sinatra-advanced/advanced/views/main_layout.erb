@@ -1,0 +1,25 @@
+<!doctype>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <% # "@title" pulls in data from other views %>
+  <title><%= @title %></title>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+</head>
+
+<body>
+
+<div id="wrapper">
+
+  <%
+  # "yield" pulls in data from the "WelcomesController"
+  # which in turn pulls data from the
+  # "welcomes/welcome" view
+  %>
+
+  <%= yield %>
+
+</div><!-- #wrapper -->
+
+</body>
+</html>
