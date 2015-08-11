@@ -20,4 +20,16 @@ RSpec.describe "listing users" do
     expect(page).to have_field("password")
     expect(page).to have_field("confirm_password")
   end
+
+  it "creates a new user and redirect to users page" do
+    visit "/users/new"
+    fill_in "email", with: "kobe@lakers.com"
+    fill_in "first_name", with: "Kobe"
+    fill_in "last_name", with: "Bryant"
+    fill_in "password", with: "password"
+    fill_in "confirm_password", with: "password"
+    click_button "Create User"
+    expect(current_path).to eq("/users")
+    expect(page).to have_text("Kobe")
+  end
 end
