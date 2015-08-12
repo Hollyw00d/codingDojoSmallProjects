@@ -27,12 +27,11 @@ class UsersController < ApplicationController
     user.first_name = params[:first_name]
     user.last_name = params[:last_name]
 
-
     password_salt = BCrypt::Engine.generate_salt
-    password_hash = BCrypt::Engine.hash_secret("password", password_salt)
+    password_hash = BCrypt::Engine.hash_secret(params[:password], password_salt)
 
-    user.salt = params[:password_salt]
-    user.encrypted_password = params[:password_hash]
+    user.salt = password_salt
+    user.encrypted_password = password_hash
     user.save
 
     redirect "/users"

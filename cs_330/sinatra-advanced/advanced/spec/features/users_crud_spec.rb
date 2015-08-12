@@ -1,6 +1,6 @@
 require_relative "../spec_helper"
 
-RSpec.describe "listing users" do
+RSpec.describe "Create, Read, Update, and Delete users" do
   it "displays list of existing users" do
     ["Kobe Bryant", "Julius Randle"].each do |name|
       create_user(name)
@@ -73,4 +73,5 @@ RSpec.describe "listing users" do
     expect(current_path).to eq("/users")
     expect(page).to_not have_text("Kobe")
   end
+
 end

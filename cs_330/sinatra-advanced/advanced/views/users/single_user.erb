@@ -8,5 +8,10 @@
 
 <p>&nbsp;</p>
 
+<form action="/sessions" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <p><input type="submit" value="Sign Out" /></p>
+</form>
+
 <p><a href="/users/<%= @user.id %>/edit">&raquo; Edit User Profile</a></p>
 <p><a href="/users">&raquo; View All Users</a></p>
