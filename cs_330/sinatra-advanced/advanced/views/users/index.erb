@@ -2,7 +2,7 @@
 
 <ul>
     <% @users.reverse_each do |u| %>
-        <li><%= u.first_name %> <%= u.last_name %></li>
+        <li><a href="/users/<%= u.id %>"><%= u.first_name %> <%= u.last_name %></a></li>
     <% end %>
 </ul>
 

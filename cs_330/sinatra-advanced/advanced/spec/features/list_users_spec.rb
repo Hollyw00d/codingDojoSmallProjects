@@ -32,4 +32,19 @@ RSpec.describe "listing users" do
     expect(current_path).to eq("/users")
     expect(page).to have_text("Kobe")
   end
+
+  it "displays information about user" do
+    u = create_user("Kobe Bryant")
+    visit "/users/#{u.id}"
+    expect(page).to have_text("#{u.first_name}")
+    expect(page).to have_text("#{u.last_name}")
+  end
+
+  it "displays information about user being updated" do
+    u = create_user("Kobe Bryant")
+    visit "/users/#{u.id}/edit"
+    expect(find_field("first_name").value).to eq(u.first_name)
+    expect(find_field("last_name").value).to eq(u.last_name)
+    expect(find_field("email").value).to eq(u.email)
+  end
 end

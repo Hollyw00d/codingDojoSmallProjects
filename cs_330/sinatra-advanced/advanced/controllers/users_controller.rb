@@ -3,20 +3,24 @@ class UsersController < ApplicationController
   # because "config.ru" has the line below:
   # map("/users"){ run UsersController }
   get "/" do
+    @title = "All Users"
+    @users = User.all
     erb :main_layout do
-      @title = "All Users"
-      @users = User.all
       erb :"users/index"
     end
   end
 
+  # Path for GET request below is "/users/new" and points
+  # to a form to add a new user
   get "/new" do
+    @title = "Add a New User"
     erb :main_layout do
-      @title = "Add a New User"
       erb :"users/new"
     end
   end
 
+  # "/users" POST request to add a new user and redirect from
+  # "/users/new" to "/users"
   post "/" do
     user = User.new
     user.email = params[:email]
@@ -31,8 +35,25 @@ class UsersController < ApplicationController
     user.encrypted_password = params[:password_hash]
     user.save
 
-
     redirect "/users"
+  end
+
+  # Show a single user
+  get "/:id" do
+    @user = User.find(params[:id])
+    @title = "#{@user.first_name} #{@user.last_name} User Profile"
+    erb :main_layout do
+      erb :"users/single_user"
+    end
+  end
+
+  # Go to a page to edit a user
+  get "/:id/edit" do
+    @user = User.find(params[:id])
+    @title = "Edit #{@user.first_name} #{@user.last_name} User Profile"
+    erb :main_layout do
+      erb :"users/edit_user"
+    end
   end
 
 end
