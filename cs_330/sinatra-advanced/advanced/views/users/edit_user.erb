@@ -1,0 +1,41 @@
+<h1><%= @title %></h1>
+
+<form id="users-form" action="/users/<%= @user.id %>" method="post">
+  <input type="hidden" name="_method" value="patch" />
+  <p>
+    <label for="email">Email:</label>
+    <input name="email" type="email" value="<%= @user.email %>" />
+  </p>
+
+  <p>
+    <label for="first_name">First Name:</label>
+    <input name="first_name" type="text" value="<%= @user.first_name %>" />
+  </p>
+
+  <p>
+    <label for="last_name">Last Name:</label>
+    <input name="last_name" type="text" value="<%= @user.last_name %>" />
+  </p>
+
+  <p>
+    <input type="submit" value="Update User" />
+  </p>
+</form>
+
+<form action="/users/<%= @user.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <p>
+    <input type="submit" value="Delete User" />
+  </p>
+</form>
+
+<p>&nbsp;</p>
+
+<form action="/sessions" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <p><input type="submit" value="Sign Out" /></p>
+</form>
+
+<p><a href="/users/<%= @user.id %>">&raquo; View <%= @user.last_name %> <%= @user.first_name %> Profile</a></p>
+
+<p><a href="/users">&raquo; View All Users</a></p>

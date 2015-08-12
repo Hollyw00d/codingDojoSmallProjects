@@ -1,0 +1,28 @@
+<h1><%= @title %></h1>
+
+<%
+# If log errors exist display the
+# "session[:errors]" variable
+# and then assign it to "nil"
+%>
+<% if session[:errors] %>
+  <p class="error"><%= session[:errors] %></p>
+  <% session[:errors] = nil %>
+<% end %>
+
+<form id="users-form" action="/sessions" method="post">
+  <p>
+    <label for="email">Email:</label>
+    <input type="email" name="email" />
+  </p>
+
+  <p>
+    <label for="password">Password:</label>
+    <input type="password" name="password" />
+  </p>
+
+  <p>
+    <input type="submit" value="Sign In" />
+  </p>
+
+</form>

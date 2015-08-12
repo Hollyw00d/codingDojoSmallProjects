@@ -1,0 +1,72 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    line-height: 35px;
+}
+
+a, a:link, a:visited {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: blue;
+    text-decoration: underline;
+}
+
+
+#wrapper {
+    width: 920px;
+    padding: 20px;
+    margin: 0 auto;
+    line-height: 26px;
+}
+
+.important {
+    font-weight: bold;
+}
+
+#users-form label {
+    display: inline-block;
+    width: 120px;
+}
+
+#users-form input[type=text] {
+    display: inline-block;
+    width: 180px;
+    padding: 3px;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+#users-list {
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+
+#users-list li {
+    margin: 0 0 10px 0;
+    padding: 10px;
+    border: 1px solid #000;
+    list-style-type: none;
+}
+
+#users-list strong {
+    display: inline-block;
+    width: 120px;
+}
+
+#single-user-profile {
+
+}
