@@ -18,15 +18,19 @@
   </p>
 
   <p>
-    <label for="password">New Password:</label>
-    <input name="password" type="password" />
+    <input type="submit" value="Update User" />
   </p>
+</form>
 
+<form action="/users/delete/<%= @user.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
   <p>
-    <input type="submit" value="Create User" />
+    <input type="submit" value="Delete User" />
   </p>
 </form>
 
 <p>&nbsp;</p>
 
 <p><a href="/users/<%= @user.id %>">&raquo; View <%= @user.last_name %> <%= @user.first_name %> Profile</a></p>
+
+<p><a href="/users">&raquo; View All Users</a></p>

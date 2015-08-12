@@ -56,4 +56,18 @@ class UsersController < ApplicationController
     end
   end
 
+  # PATCH request to update a user
+  patch "/:id" do
+    user = User.find(params[:id])
+    user.update(email: params[:email], first_name: params[:first_name], last_name: params[:last_name])
+
+    redirect "/users"
+  end
+
+  # DELETE request to delete a user
+  delete "/delete/:id" do
+    user = User.find(params[:id])
+    user.destroy
+    redirect "/users"
+  end
 end

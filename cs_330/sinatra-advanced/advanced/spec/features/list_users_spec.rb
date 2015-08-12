@@ -47,4 +47,30 @@ RSpec.describe "listing users" do
     expect(find_field("last_name").value).to eq(u.last_name)
     expect(find_field("email").value).to eq(u.email)
   end
+
+  it "updates user and redirect to users page" do
+    u = create_user("Kobe Bryant")
+    visit "/users/#{u.id}/edit"
+
+    expect(page.status_code).to eq(200)
+    fill_in "first_name", with: "Vino"
+    click_button "Update User"
+    expect(current_path).to eq("/users")
+    expect(page).to have_text("Vino")
+    expect(page).not_to have_text("Kobe")
+  end
+
+  it "deletes user and redirects to users page" do
+    u = create_user("Kobe Bryant")
+
+    visit "/users"
+    expect(page).to have_text("Kobe")
+
+    visit "/users/#{u.id}/edit"
+    expect(page.status_code).to eq(200)
+
+    click_button "Delete User"
+    expect(current_path).to eq("/users")
+    expect(page).to_not have_text("Kobe")
+  end
 end
