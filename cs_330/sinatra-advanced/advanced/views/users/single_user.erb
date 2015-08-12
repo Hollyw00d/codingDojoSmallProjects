@@ -6,6 +6,21 @@
   <li><strong>Email:</strong> <%= @user.email %></li>
 </ul>
 
+<form action="/posts" method="post">
+  <input type="hidden" name="user_id" value="<% @user.id %>" />
+  <p>
+    <label for="content">Content:</label>
+    <input type="text" name="content" />
+  </p>
+  <p>
+    <input type="submit" value="Create Post" />
+  </p>
+</form>
+
+<% @user.posts.each do |p| %>
+  <p><% p.content %></p>
+<% end %>
+
 <p>&nbsp;</p>
 
 <form action="/sessions" method="post">

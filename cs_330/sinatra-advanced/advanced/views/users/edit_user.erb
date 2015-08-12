@@ -22,7 +22,7 @@
   </p>
 </form>
 
-<form action="/users/delete/<%= @user.id %>" method="post">
+<form action="/users/<%= @user.id %>" method="post">
   <input type="hidden" name="_method" value="delete" />
   <p>
     <input type="submit" value="Delete User" />

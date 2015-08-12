@@ -61,17 +61,22 @@ RSpec.describe "Create, Read, Update, and Delete users" do
   end
 
   it "deletes user and redirects to users page" do
-    u = create_user("Kobe Bryant")
+    user = create_user("Kobe Bryant")
 
     visit "/users"
     expect(page).to have_text("Kobe")
 
-    visit "/users/#{u.id}/edit"
+    visit "/users/#{user.id}/edit"
     expect(page.status_code).to eq(200)
 
     click_button "Delete User"
-    expect(current_path).to eq("/users")
-    expect(page).to_not have_text("Kobe")
   end
 
+  it "has many posts" do
+    user = create_user("Kobe Bryant")
+    post1 = user.posts.new(content: "First Post")
+    post2 = user.posts.new(content: "Second Post")
+    expect(user.posts).to include(post1)
+    expect(user.posts).to include(post2)
+  end
 end
