@@ -18,8 +18,6 @@ class ProductsController < ApplicationController
     # in source code after form is submitted
     # render :text => @products.inspect
 
-    puts @products.inspect
-
     redirect_to "/"
   end
 end
