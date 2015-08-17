@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # When a form does a POST
   post "products" => "products#create"
 
+  # "resources :products" sets up Rails RESTful Routes
   resources :products
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
