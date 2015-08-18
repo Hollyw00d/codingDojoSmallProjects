@@ -2,8 +2,6 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-    # user = User.new(first_name: "", last_name: "", email: "", password: "")
-
   it "requires a first name" do
     user = User.new(first_name: "")
     user.valid?
@@ -33,4 +31,5 @@ RSpec.describe User, type: :model do
     user.valid?
     expect(user.errors[:email].any?).to eq(true)
   end
+
 end

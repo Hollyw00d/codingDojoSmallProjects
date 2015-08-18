@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  # Point the 'users' route to the
+  # 'users' controller and 'index' method
+  get 'users' => 'users#index'
+
+  get 'users/new'
+
+  # Make the "/users" path the root
+  root 'users#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
