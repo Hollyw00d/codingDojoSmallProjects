@@ -1,0 +1,31 @@
+<h1>Show <%= @user.first_name %> <%= @user.last_name %> User Profile</h1>
+
+<form action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <input type="hidden" />
+  <p>
+    <label for="first_name">First Name:</label>
+    <input type="text" name="user[first_name]" value="<%= @user.first_name %>" />
+  </p>
+
+  <p>
+    <label for="last_name">Last Name:</label>
+    <input type="text" name="user[last_name]" value="<%= @user.last_name %>" />
+  </p>
+
+  <p>
+    <label for="email">Email:</label>
+    <input type="text" name="user[email]" value="<%= @user.email %>" />
+  </p>
+
+  <p>
+    <label for="password">Password:</label>
+    <input type="password" name="user[password]" />
+  </p>
+
+  <p>
+    <input type="submit" value="Update" />
+  </p>
+</form>
+
+<p><a href="/">View All Users</a></p>

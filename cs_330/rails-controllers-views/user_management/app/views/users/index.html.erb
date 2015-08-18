@@ -6,6 +6,7 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>Email</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -14,8 +15,11 @@
           <td><%= u.first_name %></td>
           <td><%= u.last_name %></td>
           <td><%= u.email %></td>
+          <td><a href="/users/<%= u.id %>">Show</a> | <a href="/users/<%= u.id %>/edit">Edit</a></td>
         </tr>
     <% end %>
   </tbody>
 
 </table>
+
+<p><a href="/users/new">New User</a></p>

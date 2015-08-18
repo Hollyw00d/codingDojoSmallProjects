@@ -4,7 +4,17 @@ Rails.application.routes.draw do
   # 'users' controller and 'index' method
   get 'users' => 'users#index'
 
-  get 'users/new'
+  # Add new user form
+  get 'users/new' => 'users#new'
+
+  # Create new user
+  post 'users' => 'users#create'
+
+  # Show a single user
+  get 'users/:id' => 'users#show'
+
+  # Edit a single user
+  get 'users/:id/edit' => 'users#edit'
 
   # Make the "/users" path the root
   root 'users#index'
