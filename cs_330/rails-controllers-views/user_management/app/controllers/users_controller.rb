@@ -28,6 +28,23 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    user = User.find(params[:id])
+    user.update(user_params)
+    redirect_to "/"
+  end
+
+  def destroy
+    # If line below as uncommented
+    # it would be stop on a "/users/:id"
+    # route and show the available "params":
+    # "fail"
+
+    user = User.find(params[:id])
+    user.destroy
+    redirect_to "/"
+  end
+
   private
     # Ensure that input from form MUST MATCH column names in "users" table
     # that are listed below

@@ -1,0 +1,16 @@
+require "rails_helper"
+
+RSpec.describe "updating user" do
+  it "should update user and redirect to users page" do
+    User.create(first_name: "Dexter", last_name: "Clark", email: "dexter@gmail.com", password: "password")
+
+    visit "/"
+    click_link "Show"
+    click_link "Edit"
+
+    fill_in "user[first_name]", with: "Stephen"
+    click_button "Update"
+    expect(current_path).to eq("/")
+    expect(page).to have_text("Stephen")
+  end
+end

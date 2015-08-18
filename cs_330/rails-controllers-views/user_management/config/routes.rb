@@ -16,6 +16,12 @@ Rails.application.routes.draw do
   # Edit a single user
   get 'users/:id/edit' => 'users#edit'
 
+  # Update single user
+  patch '/users/:id' => 'users#update'
+
+  # Delete single user
+  delete '/users/:id' => 'users#destroy'
+
   # Make the "/users" path the root
   root 'users#index'
 

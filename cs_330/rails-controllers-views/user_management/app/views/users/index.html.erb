@@ -15,7 +15,13 @@
           <td><%= u.first_name %></td>
           <td><%= u.last_name %></td>
           <td><%= u.email %></td>
-          <td><a href="/users/<%= u.id %>">Show</a> | <a href="/users/<%= u.id %>/edit">Edit</a></td>
+          <td><a href="/users/<%= u.id %>">Show</a> | <a href="/users/<%= u.id %>/edit">Edit</a>
+            <form action="/users/<%= u.id %>" method="post">
+              <input type="hidden" name="_method" value="delete" />
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+              <input type="submit" value="Delete" />
+            </form>
+          </td>
         </tr>
     <% end %>
   </tbody>
