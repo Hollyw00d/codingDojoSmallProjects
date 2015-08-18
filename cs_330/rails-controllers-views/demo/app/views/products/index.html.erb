@@ -1,0 +1,41 @@
+<h1>Products</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.reverse_each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.description %></td>
+      <td><%= product.created_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Create a New Product</h2>
+
+<% # "if @product.errors.any?" returns "true" if block DOES NOT return "false" or "nil" %>
+<% if defined?(@errors) %>
+    <% @errors.each do |error| %>
+        <p class="error"><%= error %></p>
+    <% end %>
+<% end %>
+
+<form action="/products" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" />
+    <p>
+      <input type="text" name="product[name]" placeholder="Product Name" />
+    </p>
+    <p>
+      <textarea name="product[description]" placeholder="Description"></textarea>
+    </p>
+    <p>
+      <input type="submit" value="Create" />
+    </p>
+</form>
