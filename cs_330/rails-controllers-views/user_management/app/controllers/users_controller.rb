@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to "/"
     else
-      @errors = @product.errors.full_messages
+      @errors = @user.errors.full_messages
       render "index"
     end
 

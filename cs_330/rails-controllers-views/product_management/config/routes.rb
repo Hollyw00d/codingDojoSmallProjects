@@ -1,4 +1,27 @@
 Rails.application.routes.draw do
+  get 'products' => 'products#index'
+
+  # Create new product
+  get 'products/new' => 'products#new'
+
+  # Create a new product
+  post 'products' => 'products#create'
+
+  # Show single product
+  get 'products/:id' => 'products#show'
+
+  # Edit single product
+  get 'products/:id/edit' => 'products#edit'
+
+  # Update single product
+  patch 'products/:id' => 'products#update'
+
+  # Destroy single product
+  delete 'products/:id' => 'products#destroy'
+
+  # Make 'products#index' controller method root
+  root 'products#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
