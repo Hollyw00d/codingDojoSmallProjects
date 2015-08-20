@@ -1,37 +1,43 @@
-<h1>View <%= @product.name %>  Product</h1>
+<% content_for :head do %>
+    <title>View <%= @product.name %> Product</title>
+<% end %>
 
-<ul>
-  <li><strong>Name:</strong> <%= @product.name %></li>
-  <li><strong>Description:</strong> <%= @product.description %></li>
-  <li><strong>Price:</strong> $<%= @product.price %></li>
-  <li><strong>Category:</strong> <%= @product.category.name %></li>
-</ul>
+<% content_for :main do %>
+  <h1>View <%= @product.name %> Product</h1>
+
+  <ul>
+    <li><strong>Name:</strong> <%= @product.name %></li>
+    <li><strong>Description:</strong> <%= @product.description %></li>
+    <li><strong>Price:</strong> $<%= @product.price %></li>
+    <li><strong>Category:</strong> <%= @product.category.name %></li>
+  </ul>
 
 
-<h2>Add Comment</h2>
-<form action="/comments" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-  <input type="hidden" name="product_id" value="<%= @product.id %>" />
-  <p>
-    <textarea name="comment"></textarea>
-  </p>
-  <p>
-    <input type="submit" value="Add Comment" />
-  </p>
-</form>
+  <h2>Add Comment</h2>
+  <form action="/comments" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <input type="hidden" name="product_id" value="<%= @product.id %>" />
+    <p>
+      <textarea name="comment"></textarea>
+    </p>
+    <p>
+      <input type="submit" value="Add Comment" />
+    </p>
+  </form>
 
-<h2>Comments</h2>
+  <h2>Comments</h2>
 
-<ul>
-  <% @product.comments.reverse_each do |c| %>
-    <li><%= c.comment %><form action="/comments/<%= c.id %>" method="post">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-      <input type="hidden" name="_method" value="delete" />
-      <input type="submit" value="Delete" />
-    </form><br /></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @product.comments.reverse_each do |c| %>
+      <li><%= c.comment %><form action="/comments/<%= c.id %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+        <input type="hidden" name="_method" value="delete" />
+        <input type="submit" value="Delete" />
+      </form><br /></li>
+    <% end %>
+  </ul>
 
-<p><a href="/products/<%= @product.id %>/edit">Edit Product</a></p>
+  <p><a href="/products/<%= @product.id %>/edit">Edit Product</a></p>
 
-<p><a href="/">View All Products</a></p>
+  <p><a href="/">View All Products</a></p>
+<% end %>

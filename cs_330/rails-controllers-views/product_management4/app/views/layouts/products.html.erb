@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <%= yield :head %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <%= yield :main %>
+
+</div>
+
+</body>
+</html>
