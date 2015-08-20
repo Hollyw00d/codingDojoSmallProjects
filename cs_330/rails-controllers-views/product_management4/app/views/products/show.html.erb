@@ -4,6 +4,7 @@
   <li><strong>Name:</strong> <%= @product.name %></li>
   <li><strong>Description:</strong> <%= @product.description %></li>
   <li><strong>Price:</strong> $<%= @product.price %></li>
+  <li><strong>Category:</strong> <%= @product.category.name %></li>
 </ul>
 
 
@@ -31,4 +32,6 @@
   <% end %>
 </ul>
 
-<p><a href="/">View All Users</a></p>
+<p><a href="/products/<%= @product.id %>/edit">Edit Product</a></p>
+
+<p><a href="/">View All Products</a></p>

@@ -1,14 +1,6 @@
 class CommentsController < ApplicationController
   def index
-  end
-
-  def new
-  end
-
-  def show
-  end
-
-  def edit
+    @comments = Comment.all
   end
 
   def create

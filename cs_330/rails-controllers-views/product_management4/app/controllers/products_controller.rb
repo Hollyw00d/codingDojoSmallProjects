@@ -13,6 +13,8 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id])
+    @categories = Category.all
   end
 
   def create
@@ -28,9 +30,15 @@ class ProductsController < ApplicationController
   end
 
   def update
+    product = Product.find(params[:id])
+    product.update(product_params)
+    redirect_to "/products/#{product.id}"
   end
 
   def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    redirect_to "/"
   end
 
   private

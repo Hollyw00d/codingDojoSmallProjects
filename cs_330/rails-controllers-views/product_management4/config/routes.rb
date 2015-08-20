@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-  get 'comments/index'
 
-  get 'comments/new'
-
-  get 'comments/show'
-
-  get 'comments/edit'
-
+  # Products controller routes
   get 'products' => 'products#index'
 
   get 'products/new' => 'products#new'
@@ -20,6 +14,9 @@ Rails.application.routes.draw do
   patch 'products/:id' => 'products#update'
 
   delete 'products/:id' => 'products#destroy'
+
+  # Comments controller routes
+  get 'comments' => 'comments#index'
 
   post 'comments' => 'comments#create'
 

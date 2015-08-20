@@ -16,14 +16,13 @@
             <td><%= p.name %></td>
             <td><%= p.description %></td>
             <td><%= p.price %></td>
-            <!-- p.categories.name in Ruby isn't working -->
             <td><%= p.category.name %></td>
             <td>
               <a href="/products/<%= p.id %>">Show</a> |
               <a href="/products/<%= p.id %>/edit">Edit</a>
-              <form action="#" method="post">
-                <input type="hidden" />
-                <input type="hidden" />
+              <form action="/products/<%= p.id %>" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+                <input type="hidden" name="_method" value="delete" />
                 <input type="submit" value="Delete" />
               </form>
             </td>
@@ -32,4 +31,6 @@
   </tbody>
 </table>
 
-<p><a href="/products/new">New Product</a></p>
+<p><a href="/products/new">Add New Product</a></p>
+
+<p><a href="/comments">View All Product Comments</a></p>
