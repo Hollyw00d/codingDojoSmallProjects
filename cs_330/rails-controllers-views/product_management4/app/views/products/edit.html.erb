@@ -1,35 +1,41 @@
-<h1>Edit <%= @product.name %> Product</h1>
+<% content_for :head do %>
+    <title>Edit <%= @product.name %> Product</title>
+<% end %>
 
-<form action="/products/<%= @product.id %>" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <input type="hidden" name="_method" value="patch" />
-    <p>
-        <strong>Current Category: </strong> <%= @product.category.name %><br /><br />
-        <strong>Choose a New Category: </strong><br />
-        <select name="product[category_id]">
-          <% @categories.each do |c| %>
-              <option value="<%= c.id %>"><%= c.name %></option>
-          <% end %>
-        </select>
-    </p>
+<% content_for :main do %>
+    <h1>Edit <%= @product.name %> Product</h1>
 
-    <p>
-        <label for="product[name]">Name:</label>
-        <input type="text" name="product[name]" value="<%= @product.name %>" />
-    </p>
-    <p>
-      <label for="product[description]">Description:</label>
-      <input type="text" name="product[description]" value="<%= @product.description %>" />
-    </p>
-    <p>
-      <label for="product[price]">Price:</label>
-      $<input type="text" name="product[price]" value="<%= @product.price %>" />
-    </p>
-    <p>
-      <input type="submit" value="Update" />
-    </p>
-</form>
+    <form action="/products/<%= @product.id %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+        <input type="hidden" name="_method" value="patch" />
+        <p>
+            <strong>Current Category: </strong> <%= @product.category.name %><br /><br />
+            <strong>Choose a New Category: </strong><br />
+            <select name="product[category_id]">
+              <% @categories.each do |c| %>
+                  <option value="<%= c.id %>"><%= c.name %></option>
+              <% end %>
+            </select>
+        </p>
 
-<p><a href="/products/<%= @product.id %>">View Product</a></p>
+        <p>
+            <label for="product[name]">Name:</label>
+            <input type="text" name="product[name]" value="<%= @product.name %>" />
+        </p>
+        <p>
+          <label for="product[description]">Description:</label>
+          <input type="text" name="product[description]" value="<%= @product.description %>" />
+        </p>
+        <p>
+          <label for="product[price]">Price:</label>
+          $<input type="text" name="product[price]" value="<%= @product.price %>" />
+        </p>
+        <p>
+          <input type="submit" value="Update" />
+        </p>
+    </form>
 
-<p><a href="/">View All Products</a></p>
+    <p><a href="/products/<%= @product.id %>">View Product</a></p>
+
+    <p><a href="/">View All Products</a></p>
+<% end %>

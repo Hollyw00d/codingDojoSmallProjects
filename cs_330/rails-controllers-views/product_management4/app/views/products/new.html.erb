@@ -1,33 +1,39 @@
-<h1>Add New Product</h1>
+<% content_for :head do %>
+    <title>Add New Product</title>
+<% end %>
 
-<form action="/products" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <p>
-        <select name="product[category_id]">
-            <% @categories.each do |c| %>
-                <option value="<%= c.id %>"><%= c.name %></option>
-            <% end %>
-        </select>
-    </p>
+<% content_for :main do %>
+    <h1>Add New Product</h1>
 
-    <p>
-    <label for="name">Name:</label>
-    <input type="text" name="product[name]" />
-    </p>
+    <form action="/products" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+        <p>
+            <select name="product[category_id]">
+                <% @categories.each do |c| %>
+                    <option value="<%= c.id %>"><%= c.name %></option>
+                <% end %>
+            </select>
+        </p>
 
-    <p>
-    <label for="description">Description:</label>
-    <input type="text" name="product[description]" />
-    </p>
+        <p>
+        <label for="name">Name:</label>
+        <input type="text" name="product[name]" />
+        </p>
 
-    <p>
-    <label for="price">Price:</label>
-    <input type="number" step="any" name="product[price]" />
-    </p>
+        <p>
+        <label for="description">Description:</label>
+        <input type="text" name="product[description]" />
+        </p>
 
-    <p>
-    <input type="submit" value="Create" />
-    </p>
-</form>
+        <p>
+        <label for="price">Price:</label>
+        <input type="number" step="any" name="product[price]" />
+        </p>
 
-<p><a href="/">View All Users</a></p>
+        <p>
+        <input type="submit" value="Create" />
+        </p>
+    </form>
+
+    <p><a href="/">View All Users</a></p>
+<% end %>
