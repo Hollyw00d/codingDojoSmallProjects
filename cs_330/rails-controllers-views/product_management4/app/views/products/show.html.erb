@@ -6,4 +6,29 @@
   <li><strong>Price:</strong> $<%= @product.price %></li>
 </ul>
 
+
+<h2>Add Comment</h2>
+<form action="/comments" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <input type="hidden" name="product_id" value="<%= @product.id %>" />
+  <p>
+    <textarea name="comment"></textarea>
+  </p>
+  <p>
+    <input type="submit" value="Add Comment" />
+  </p>
+</form>
+
+<h2>Comments</h2>
+
+<ul>
+  <% @product.comments.reverse_each do |c| %>
+    <li><%= c.comment %><form action="/comments/<%= c.id %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      <input type="hidden" name="_method" value="delete" />
+      <input type="submit" value="Delete" />
+    </form><br /></li>
+  <% end %>
+</ul>
+
 <p><a href="/">View All Users</a></p>

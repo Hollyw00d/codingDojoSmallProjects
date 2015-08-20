@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'comments/index'
+
+  get 'comments/new'
+
+  get 'comments/show'
+
+  get 'comments/edit'
+
   get 'products' => 'products#index'
 
   get 'products/new' => 'products#new'
@@ -12,6 +20,10 @@ Rails.application.routes.draw do
   patch 'products/:id' => 'products#update'
 
   delete 'products/:id' => 'products#destroy'
+
+  post 'comments' => 'comments#create'
+
+  delete 'comments/:id' => 'comments#destroy'
 
   # Make 'products#index' controller method root
   root 'products#index'

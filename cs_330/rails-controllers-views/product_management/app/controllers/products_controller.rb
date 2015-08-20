@@ -7,8 +7,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @products = Product.all
-
     @product = Product.new(product_params)
 
     if @product.save
