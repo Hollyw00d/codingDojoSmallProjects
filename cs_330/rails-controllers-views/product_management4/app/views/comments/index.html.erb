@@ -1,0 +1,21 @@
+<h1>All Product Comments</h1>
+
+<table>
+    <thead>
+        <tr>
+          <th>Comments</th>
+          <th>Products</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @comments.reverse_each do |c| %>
+            <tr>
+                <td><%= c.comment %></td>
+                <td><%= c.product.name %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+
+<p><a href="/">View All Products</a></p>
