@@ -41,3 +41,20 @@ body {
 #login-new-form input[type=submit] {
     width: 100px;
 }
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+#profile li {
+    padding: 0 0 10px;
+}
+
+#profile li strong {
+    display: inline-block;
+    width: 100px;
+}

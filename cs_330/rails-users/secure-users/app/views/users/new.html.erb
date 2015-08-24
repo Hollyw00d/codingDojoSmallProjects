@@ -1,4 +1,4 @@
-<% @main_heading = "Create New User" %>
+<% @main_heading = "Sign Up" %>
 
 <% content_for :head do %>
     <title><%= @main_heading %></title>
@@ -6,27 +6,33 @@
 
 <h1><%= @main_heading %></h1>
 
-<form id="login-new-form" action="#" method="post">
-  <input type="hidden" />
+<% if defined?(@errors) %>
+  <% @errors.each do |error| %>
+    <p class="error"><%= error %></p>
+  <% end %>
+<% end %>
+
+<form id="login-new-form" action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
   <p>
     <label for="email">Email:</label>
-    <input type="text" name="email" />
+    <input type="text" name="user[email]" />
   </p>
   <p>
     <label for="name">Name:</label>
-    <input type="text" name="name" />
+    <input type="text" name="user[name"] />
   </p>
   <p>
     <label for="password">Password:</label>
-    <input type="password" name="password" />
+    <input type="password" name="user[password]" />
   </p>
   <p>
     <label for="password_confirmation">Password Confirmation:</label>
-    <input type="password" name="password_confirmation" />
+    <input type="password" name="user[password_confirmation]" />
   </p>
   <p>
-    <input type="submit" value="Log In" />
+    <input type="submit" value="Sign Up" />
   </p>
 </form>
 
-<p><a href="/sessions/new">Log In for Existing User</a></p>
+<p><a href="/sessions/new">Existing User Sign In</a></p>

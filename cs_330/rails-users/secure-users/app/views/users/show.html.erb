@@ -1,2 +1,24 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% @main_heading = "#{@user.name} User Profile" %>
+
+<% content_for :head do %>
+    <title><%= @main_heading %></title>
+<% end %>
+
+<h1><%= @main_heading %></h1>
+
+<ul id="profile">
+  <li><strong>Name:</strong><%= @user.name %></li>
+  <li><strong>Email:</strong><%= @user.email %></li>
+</ul>
+
+<p>
+  <a href="/users/<%= @user.id %>/edit">Edit Profile</a>
+</p>
+
+<form action="/sessions/<%= @user.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <input type="hidden" name="_method" value="delete" />
+  <p>
+    <input type="submit" value="Sign Out" />
+  </p>
+</form>

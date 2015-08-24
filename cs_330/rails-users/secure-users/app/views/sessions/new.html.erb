@@ -1,12 +1,12 @@
-<% @main_heading = "Log In" %>
+<% @main_heading = "Sign In" %>
 
 <% content_for :head do %>
     <title><%= @main_heading %></title>
 <% end %>
 
 <h1><%= @main_heading %></h1>
-<form id="login-new-form" action="#" method="post">
-    <input type="hidden" />
+<form id="login-new-form" action="/sessions" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
     <p>
       <label for="email">Email:</label>
       <input type="text" name="email" />
@@ -16,8 +16,8 @@
       <input type="password" name="password" />
     </p>
     <p>
-      <input type="submit" value="Log In" />
+      <input type="submit" value="Sign In" />
     </p>
 </form>
 
-<p><a href="/users/new">Create New User</a></p>
+<p><a href="/users/new">New User Sign Up</a></p>
