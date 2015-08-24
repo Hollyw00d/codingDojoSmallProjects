@@ -1,4 +1,10 @@
-<h1>Edit <%= @user.name %> Profile</h1>
+<% @main_heading = "Edit #{@user.name} User Profile" %>
+
+<% content_for :head do %>
+    <title><%= @main_heading %></title>
+<% end %>
+
+<h1><%= @main_heading %></h1>
 
 <form id="login-new-form" action="/users/<%= @user.id %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
