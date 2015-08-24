@@ -11,16 +11,34 @@
   <input type="hidden" name="_method" value="patch" />
   <p>
     <label for="name">Name:</label>
-    <input type="text" name="user[name]" value="<%= @user.name %>" />
+    <input type="text" name="name" value="<%= @user.name %>" />
   </p>
   <p>
-    <label for="name">Email:</label>
-    <input type="text" name="user[email]" value="<%= @user.email %>" />
+    <label for="email">Email:</label>
+    <input type="text" name="email" value="<%= @user.email %>" />
+  </p>
+  <p>
+    <label for="password">New Password:</label>
+    <input type="password" name="password" />
   </p>
   <p>
     <input type="submit" value="Update" />
   </p>
 </form>
+
+<form id="login-new-form" action="/users/<%= @user.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <input type="hidden" name="_method" value="delete" />
+  <p>
+    <input type="submit" value="Delete Account" />
+  </p>
+</form>
+
+<p>&nbsp;</p>
+
+<p>
+  <a href="/users/<%= @user.id %>">Show Profile</a>
+</p>
 
 <form action="/sessions/<%= @user.id %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />

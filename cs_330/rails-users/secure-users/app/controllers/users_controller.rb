@@ -33,8 +33,16 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    user.update(user_params)
+    user.update(name: params[:name], email: params[:email], password: params[:password])
     redirect_to "/users/#{user.id}"
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+
+    session[:user_id] = nil
+    redirect_to "/sessions/new"
   end
 
   private

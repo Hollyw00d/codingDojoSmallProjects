@@ -7,10 +7,14 @@ Rails.application.routes.draw do
 
   get 'users/:id/edit' => 'users#edit'
 
+  # Create new user
   post 'users' => 'users#create'
 
+  # Update user
   patch 'users/:id' => 'users#update'
 
+  # Delete user
+  delete 'users/:id' => 'users#destroy'
 
   # User "Sign In" page
   get 'sessions/new' => 'sessions#new'
