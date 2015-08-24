@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#wrapper {
+    width: 920px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#login-new-form label {
+    display: inline-block;
+    width: 150px;
+}
+
+#login-new-form input {
+    display: inline-block;
+    width: 200px;
+    padding: 3px;
+    vertical-align: top;
+}
+
+#login-new-form input[type=submit] {
+    width: 100px;
+}

@@ -1,0 +1,32 @@
+<% @main_heading = "Create New User" %>
+
+<% content_for :head do %>
+    <title><%= @main_heading %></title>
+<% end %>
+
+<h1><%= @main_heading %></h1>
+
+<form id="login-new-form" action="#" method="post">
+  <input type="hidden" />
+  <p>
+    <label for="email">Email:</label>
+    <input type="text" name="email" />
+  </p>
+  <p>
+    <label for="name">Name:</label>
+    <input type="text" name="name" />
+  </p>
+  <p>
+    <label for="password">Password:</label>
+    <input type="password" name="password" />
+  </p>
+  <p>
+    <label for="password_confirmation">Password Confirmation:</label>
+    <input type="password" name="password_confirmation" />
+  </p>
+  <p>
+    <input type="submit" value="Log In" />
+  </p>
+</form>
+
+<p><a href="/sessions/new">Log In for Existing User</a></p>
