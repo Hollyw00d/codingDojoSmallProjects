@@ -4,7 +4,7 @@ class SecretsController < ApplicationController
       redirect_to "/sessions/new"
     end
 
-    @secrets = Secret.all
+    @secrets_with_likes = Secret.joins("LEFT JOIN likes ON secrets.id = likes.secret_id").select("secrets.*, count(likes.secret_id)").group("secrets.id")
     # Find user by "session[:user_id]"
     @user = User.find(session[:user_id])
   end
