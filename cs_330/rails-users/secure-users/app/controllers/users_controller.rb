@@ -33,8 +33,13 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    user.update(name: params[:name], email: params[:email], password: params[:password])
+    if user.update(name: params[:name], email: params[:email], password: params[:password])
     redirect_to "/users/#{user.id}"
+    else
+      @user = User.find(params[:id])
+      @errors = user.errors.full_messages
+      render "edit"
+    end
   end
 
   def destroy

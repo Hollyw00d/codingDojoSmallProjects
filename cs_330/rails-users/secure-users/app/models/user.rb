@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  has_secure_password validations: false
+  has_many :secrets, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_secure_password
 
   validates :name, presence: true
 

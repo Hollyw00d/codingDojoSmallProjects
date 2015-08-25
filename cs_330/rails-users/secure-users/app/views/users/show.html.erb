@@ -11,6 +11,43 @@
   <li><strong>Email:</strong><%= @user.email %></li>
 </ul>
 
+<h3>New Secret</h3>
+<form id="login-new-form" action="/secrets" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <input type="hidden" name="secret[user_id]" value="<%= @user.id %>" />
+  <p>
+    <textarea name="secret[content]"></textarea>
+  </p>
+  <p>
+    <input type="submit" value="Create Secret" />
+  </p>
+</form>
+
+<div class="col2">
+  <h3>Your Secrets</h3>
+
+  <% @user.secrets.reverse_each do |s| %>
+      <p><%= s.content %></p>
+      <form action="/secrets/<%= s.id %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+        <input type="hidden" name="_method" value="delete" />
+        <p>
+          <input type="submit" value="Delete Secret" />
+        </p>
+      </form>
+  <% end %>
+
+</div>
+
+<div class="col2">
+  <h3>Secrets Liked</h3>
+
+</div>
+
+<br class="clear" />
+
+
+
 <p>
   <a href="/users/<%= @user.id %>/edit">Edit Profile</a>
 </p>

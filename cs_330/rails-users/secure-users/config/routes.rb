@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'secrets/index'
+
   get 'users' => 'users#index'
 
   get 'users/new' => 'users#new'
@@ -25,5 +27,12 @@ Rails.application.routes.draw do
   # Verify user and sign in if inputed
   # email and password match DB
   post 'sessions' => 'sessions#create'
+
+
+  # Create new secret
+  post 'secrets' => 'secrets#create'
+
+  # Delete secret
+  delete 'secrets/:id' => 'secrets#destroy'
 
 end
