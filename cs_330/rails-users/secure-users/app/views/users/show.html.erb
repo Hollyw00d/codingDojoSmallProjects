@@ -1,0 +1,72 @@
+<% @main_heading = "#{@user.name} User Profile" %>
+
+<% content_for :head do %>
+    <title><%= @main_heading %></title>
+<% end %>
+
+<h1><%= @main_heading %></h1>
+
+<ul id="profile">
+  <li><strong>Name:</strong><%= @user.name %></li>
+  <li><strong>Email:</strong><%= @user.email %></li>
+</ul>
+
+<h3>New Secret</h3>
+<form id="login-new-form" action="/secrets" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <input type="hidden" name="secret[user_id]" value="<%= @user.id %>" />
+  <p>
+    <textarea name="secret[content]"></textarea>
+  </p>
+  <p>
+    <input type="submit" value="Create Secret" />
+  </p>
+</form>
+
+<div class="col2">
+  <h3>Your Secrets</h3>
+
+  <% @user.secrets.reverse_each do |s| %>
+      <p><%= s.content %></p>
+      <form action="/secrets/<%= s.id %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+        <input type="hidden" name="_method" value="delete" />
+        <p>
+          <input type="submit" value="Delete Secret" />
+        </p>
+      </form>
+  <% end %>
+
+</div>
+
+<div class="col2">
+  <h3>Secrets Liked</h3>
+
+  <% @secrets_with_likes.reverse_each do |s_l| %>
+      <% if s_l.user_id === session[:user_id] %>
+          <p>
+            <%= s_l.content %><br />
+            <%= s_l.count %> <em>like(s)</em>
+          </p>
+      <% end %>
+  <% end %>
+
+</div>
+
+<br class="clear" />
+
+<p>
+  <a href="/users/<%= @user.id %>/edit">Edit Profile</a>
+</p>
+
+<p>
+  <a href="/secrets">View All Secrets</a>
+</p>
+
+<form action="/sessions/<%= @user.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <input type="hidden" name="_method" value="delete" />
+  <p>
+    <input type="submit" value="Sign Out" />
+  </p>
+</form>
