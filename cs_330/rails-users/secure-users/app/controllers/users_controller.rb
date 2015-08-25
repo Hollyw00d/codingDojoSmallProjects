@@ -11,7 +11,9 @@ class UsersController < ApplicationController
     end
     @user = User.find(params[:id])
 
-    @liked_secrets = Secret.joins(:likes).where("likes.user_id = #{session[:user_id]}")
+    @secrets_with_likes = Secret.joins("LEFT JOIN likes ON secrets.id = likes.secret_id").select("secrets.*, count(likes.secret_id)").group("secrets.id")
+
+    # @liked_secrets = Secret.joins(:likes).where("likes.user_id = #{session[:user_id]}")
   end
 
   def edit
