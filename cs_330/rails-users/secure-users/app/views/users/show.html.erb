@@ -42,11 +42,13 @@
 <div class="col2">
   <h3>Secrets Liked</h3>
 
+  <% @liked_secrets.reverse_each do |liked_s| %>
+    <p><%= liked_s.content %></p>
+  <% end %>
+
 </div>
 
 <br class="clear" />
-
-
 
 <p>
   <a href="/users/<%= @user.id %>/edit">Edit Profile</a>

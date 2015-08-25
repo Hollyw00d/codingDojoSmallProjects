@@ -1,5 +1,12 @@
 class SecretsController < ApplicationController
   def index
+    unless session[:user_id]
+      redirect_to "/sessions/new"
+    end
+
+    @secrets = Secret.all
+    # Find user by "session[:user_id]"
+    @user = User.find(session[:user_id])
   end
 
   def create

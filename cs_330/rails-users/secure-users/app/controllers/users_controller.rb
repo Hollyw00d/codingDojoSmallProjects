@@ -10,6 +10,8 @@ class UsersController < ApplicationController
       redirect_to "/sessions/new"
     end
     @user = User.find(params[:id])
+
+    @liked_secrets = Secret.joins(:likes).where("likes.user_id = #{session[:user_id]}")
   end
 
   def edit

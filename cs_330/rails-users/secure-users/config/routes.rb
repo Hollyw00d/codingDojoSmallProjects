@@ -28,11 +28,15 @@ Rails.application.routes.draw do
   # email and password match DB
   post 'sessions' => 'sessions#create'
 
+  get 'secrets' => 'secrets#index'
 
   # Create new secret
   post 'secrets' => 'secrets#create'
 
   # Delete secret
   delete 'secrets/:id' => 'secrets#destroy'
+
+  # Create new like
+  post 'likes' => 'likes#create'
 
 end
