@@ -6,10 +6,12 @@
 
 <h1><%= @main_heading %></h1>
 
-<% if defined?(@errors) %>
-  <% @errors.each do |error| %>
-    <p class="error"><%= error %></p>
-  <% end %>
+<% if flash[:errors] %>
+    <div class="error">
+      <% flash[:errors].each do |e| %>
+        <p><%= e %></p>
+      <% end %>
+    </div>
 <% end %>
 
 <form id="login-new-form" action="/users" method="post">

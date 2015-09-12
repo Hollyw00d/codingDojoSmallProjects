@@ -1,19 +1,27 @@
 class UsersController < ApplicationController
+  before_action :require_correct_user, only: [:show, :edit, :update, :delete]
+
   def index
+    redirect_to "/sessions/new"
   end
 
   def new
   end
 
   def show
-    unless session[:user_id]
+    if session[:user_id]
+      @user = User.find(params[:id])
+
+      @secrets_with_likes = Secret.joins("LEFT JOIN likes ON secrets.id = likes.secret_id").select("secrets.*, count(likes.secret_id)").group("secrets.id")
+
+      @secrets_with_likes = Secret.joins("LEFT JOIN likes ON secrets.id = likes.secret_id").select("secrets.*, count(likes.secret_id)").group("secrets.id")
+
+      # @liked_secrets = Secret.joins(:likes).where("likes.user_id = #{session[:user_id]}")
+
+    else
       redirect_to "/sessions/new"
     end
-    @user = User.find(params[:id])
 
-    @secrets_with_likes = Secret.joins("LEFT JOIN likes ON secrets.id = likes.secret_id").select("secrets.*, count(likes.secret_id)").group("secrets.id")
-
-    # @liked_secrets = Secret.joins(:likes).where("likes.user_id = #{session[:user_id]}")
   end
 
   def edit
@@ -30,7 +38,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
     else
-      @errors = user.errors.full_messages
+      flash[:errors] = user.errors.full_messages
       render "new"
     end
   end
@@ -41,7 +49,7 @@ class UsersController < ApplicationController
     redirect_to "/users/#{user.id}"
     else
       @user = User.find(params[:id])
-      @errors = user.errors.full_messages
+      flash[:errors] = user.errors.full_messages
       render "edit"
     end
   end
@@ -51,6 +59,7 @@ class UsersController < ApplicationController
     user.destroy
 
     session[:user_id] = nil
+    flash[:notice] = nil
     redirect_to "/sessions/new"
   end
 
